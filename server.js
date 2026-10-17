@@ -8,15 +8,13 @@ import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
+import { isIP } from "node:net";
 import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import * as data from "./lib/providers.js";
-import * as alerts from "./lib/alerts.js";
-import * as store from "./lib/store.js";
-import * as ptq from "./lib/ptq.js";
 import * as info from "./lib/market-info.js";
 import * as bbg from "./lib/bloomberg-fields.js";
-import { registerIndicator } from "./public/lib/indicators.js";
+import { registerIndicator, BY_ID } from "./public/lib/indicators.js";
 import { conditionFn } from "./public/lib/backtest.js";
 import { relaunchForProxy, proxyNote } from "./lib/proxy.js";
 
@@ -28,6 +26,61 @@ const VERSION = JSON.parse(
 ).version;
 const HOST = process.env.HOST || "127.0.0.1";
 const START_PORT = Number(process.env.PORT) || 3787;
+const PUBLIC_DEMO_ENV = process.env.PUBLIC_DEMO === "1";
+const PUBLIC_DEMO_HOST_ENV = process.env.PUBLIC_DEMO_HOST || process.env.PUBLIC_HOST || "";
+const alerts = PUBLIC_DEMO_ENV ? null : await import("./lib/alerts.js");
+const store = PUBLIC_DEMO_ENV ? null : await import("./lib/store.js");
+const ptq = PUBLIC_DEMO_ENV ? null : await import("./lib/ptq.js");
+const PUBLIC_READ_ROUTES = new Set([
+  "/api/config",
+  "/api/health",
+  "/api/resolve",
+  "/api/search",
+  "/api/spread",
+  "/api/candles",
+  "/api/quotes",
+  "/api/calendar",
+  "/api/earnings",
+  "/api/dividends",
+  "/api/news",
+  "/api/financials",
+  "/api/screener",
+  "/api/bdp",
+  "/api/bdh",
+]);
+// These functions only read public provider data or perform bounded market calculations. Stateful
+// workspace/portfolio history, alert logs, document URL fetches and PTQ stay local-only.
+const PUBLIC_FN_ALLOWLIST = new Set([
+  "anr",
+  "auct",
+  "board",
+  "btmm",
+  "btst",
+  "cbrt",
+  "cf",
+  "cot",
+  "cred",
+  "ct",
+  "des",
+  "dvd",
+  "eco",
+  "ecst",
+  "ee",
+  "eq-comp",
+  "eqs",
+  "gc",
+  "hds",
+  "insd",
+  "most",
+  "omon",
+  "ovdv",
+  "top",
+  "wirp",
+]);
+const PUBLIC_CACHEABLE = new Set([
+  ...PUBLIC_READ_ROUTES,
+  ...[...PUBLIC_FN_ALLOWLIST].map((name) => `/api/fn/${name}`),
+]);
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -41,17 +94,441 @@ const MIME = {
   ".txt": "text/plain; charset=utf-8",
 };
 
+const PUBLIC_SECURITY_HEADERS = Object.freeze({
+  "Content-Security-Policy": [
+    "default-src 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data:",
+    "font-src 'self' data:",
+    "connect-src 'self'",
+    "frame-src 'none'",
+    "frame-ancestors 'none'",
+    "form-action 'self'",
+  ].join("; "),
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "DENY",
+  "Referrer-Policy": "no-referrer",
+});
+
 // ---------- helpers ----------
 const httpError = (status, message) => Object.assign(new Error(message), { status });
 
 function send(res, status, body, headers = {}) {
   const isStr = typeof body === "string" || Buffer.isBuffer(body);
-  res.writeHead(status, {
+  const payload = isStr ? body : JSON.stringify(body);
+  const cache = res._publicCache;
+  const finalHeaders = {
+    ...(res._securityHeaders || {}),
     "Content-Type": isStr ? "text/plain; charset=utf-8" : "application/json",
     "Cache-Control": "no-store",
+    ...(cache ? { "Cache-Control": cache.cacheControl, "X-Amber-Cache": "MISS" } : {}),
     ...headers,
+  };
+  res.writeHead(status, finalHeaders);
+  cache?.put(status, payload, {
+    "Content-Type": finalHeaders["Content-Type"],
+    "Cache-Control": finalHeaders["Cache-Control"],
   });
-  res.end(isStr ? body : JSON.stringify(body));
+  res.end(payload);
+}
+
+function hostName(raw) {
+  const value = String(raw || "").trim().toLowerCase().replace(/\.$/, "");
+  if (!value) return "";
+  if (value.startsWith("[")) return value.split("]")[0].slice(1);
+  const colon = value.lastIndexOf(":");
+  return colon > -1 && /^\d+$/.test(value.slice(colon + 1))
+    ? value.slice(0, colon)
+    : value;
+}
+
+function normalizePublicHost(raw) {
+  const host = hostName(raw);
+  if (!host || host.includes("/") || /\s/.test(host) || host.includes(":"))
+    return "";
+  if (!/^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/.test(host))
+    return "";
+  return host;
+}
+
+const numberEnv = (value, fallback, min, max) => {
+  const n = Number(value);
+  return Number.isFinite(n) ? Math.min(max, Math.max(min, Math.floor(n))) : fallback;
+};
+
+function createPublicCache(config) {
+  const entries = new Map();
+  let bytes = 0;
+  const remove = (key) => {
+    const old = entries.get(key);
+    if (!old) return;
+    bytes -= old.bytes;
+    entries.delete(key);
+  };
+  const trim = () => {
+    while (entries.size > config.cacheMax || bytes > config.cacheBytes) {
+      const first = entries.keys().next().value;
+      if (first === undefined) break;
+      remove(first);
+    }
+  };
+  return {
+    get(key) {
+      const item = entries.get(key);
+      if (!item) return null;
+      if (item.expiresAt <= Date.now()) {
+        remove(key);
+        return null;
+      }
+      entries.delete(key);
+      entries.set(key, item);
+      return item;
+    },
+    put(key, status, body, headers) {
+      if (status !== 200 || typeof body !== "string") return;
+      const size = Buffer.byteLength(body);
+      if (size > config.cacheEntryBytes) return;
+      remove(key);
+      entries.set(key, {
+        status,
+        body,
+        headers,
+        bytes: size,
+        expiresAt: Date.now() + config.cacheTtlMs,
+      });
+      bytes += size;
+      trim();
+    },
+  };
+}
+
+function createRuntimeConfig(overrides = {}) {
+  const publicDemo = overrides.publicDemo ?? PUBLIC_DEMO_ENV;
+  const publicHost = normalizePublicHost(
+    overrides.publicHost ?? PUBLIC_DEMO_HOST_ENV,
+  );
+  if (publicDemo && !publicHost)
+    throw new Error(
+      "PUBLIC_DEMO=1 requires PUBLIC_DEMO_HOST with a hostname such as amber.sisengai.com",
+    );
+  const config = {
+    publicDemo,
+    publicHost,
+    bindHost: publicDemo ? "127.0.0.1" : HOST,
+    rateLimitMax: numberEnv(
+      overrides.rateLimitMax ?? process.env.PUBLIC_RATE_LIMIT_MAX,
+      120,
+      1,
+      10000,
+    ),
+    rateLimitWindowMs: numberEnv(
+      overrides.rateLimitWindowMs ?? process.env.PUBLIC_RATE_LIMIT_WINDOW_MS,
+      60e3,
+      100,
+      3600e3,
+    ),
+    cacheTtlMs: numberEnv(
+      overrides.cacheTtlMs ?? process.env.PUBLIC_CACHE_TTL_MS,
+      5e3,
+      100,
+      3600e3,
+    ),
+    cacheMax: numberEnv(
+      overrides.cacheMax ?? process.env.PUBLIC_CACHE_MAX,
+      128,
+      1,
+      1000,
+    ),
+    cacheEntryBytes: numberEnv(
+      overrides.cacheEntryBytes ?? process.env.PUBLIC_CACHE_ENTRY_BYTES,
+      512 * 1024,
+      1024,
+      10 * 1024 * 1024,
+    ),
+    cacheBytes: numberEnv(
+      overrides.cacheBytes ?? process.env.PUBLIC_CACHE_BYTES,
+      8 * 1024 * 1024,
+      16 * 1024,
+      64 * 1024 * 1024,
+    ),
+    rateMaxKeys: numberEnv(
+      overrides.rateMaxKeys ?? process.env.PUBLIC_RATE_MAX_KEYS,
+      10000,
+      100,
+      100000,
+    ),
+    rate: new Map(),
+  };
+  config.cache = createPublicCache(config);
+  return config;
+}
+
+function loopbackAddress(address) {
+  const a = String(address || "").replace(/^::ffff:/, "");
+  return a === "127.0.0.1" || a === "::1" || a === "::";
+}
+
+function validIp(value) {
+  return isIP(String(value || "").trim()) > 0;
+}
+
+// Only trust forwarded addresses from the loopback reverse proxy. Direct non-loopback clients cannot
+// choose their bucket with a spoofed X-Forwarded-For header.
+function clientIp(req) {
+  const remote = req.socket?.remoteAddress || "unknown";
+  if (loopbackAddress(remote)) {
+    const forwarded = String(req.headers["x-forwarded-for"] || "")
+      .split(",")
+      .map((x) => x.trim())
+      .find(validIp);
+    const real = String(req.headers["x-real-ip"] || "").trim();
+    if (forwarded) return forwarded;
+    if (validIp(real)) return real;
+  }
+  return remote;
+}
+
+function trimRateBuckets(config, now) {
+  for (const [key, item] of config.rate) {
+    if (now - item.startedAt >= config.rateLimitWindowMs) config.rate.delete(key);
+  }
+  while (config.rate.size > config.rateMaxKeys) {
+    const first = config.rate.keys().next().value;
+    if (first === undefined) break;
+    config.rate.delete(first);
+  }
+}
+
+function rateLimited(req, config) {
+  if (!config.publicDemo) return null;
+  const now = Date.now();
+  trimRateBuckets(config, now);
+  const key = clientIp(req);
+  let item = config.rate.get(key);
+  if (!item || now - item.startedAt >= config.rateLimitWindowMs) {
+    item = { startedAt: now, count: 0 };
+    config.rate.set(key, item);
+  }
+  item.count += 1;
+  if (item.count <= config.rateLimitMax) return null;
+  return Math.max(
+    1,
+    Math.ceil((config.rateLimitWindowMs - (now - item.startedAt)) / 1000),
+  );
+}
+
+function publicRouteAllowed(p, method) {
+  const read = method === "GET" || method === "HEAD";
+  if (PUBLIC_READ_ROUTES.has(p)) return read;
+  if (p === "/api/scan") return method === "POST";
+  const match = /^\/api\/fn\/([a-z0-9-]{1,40})$/.exec(p);
+  return Boolean(match && read && PUBLIC_FN_ALLOWLIST.has(match[1]));
+}
+
+function enforcePublicQuery(p, q) {
+  const tooLong = (value, max, label) => {
+    if (String(value || "").length > max) throw httpError(400, `${label} is too long`);
+  };
+  if (p.startsWith("/api/fn/")) tooLong(q.symbol, 80, "Symbol");
+  if (p === "/api/search") tooLong(q.q, 80, "Search query");
+  if (p === "/api/resolve" || p === "/api/spread")
+    tooLong(q.symbol, 80, "Symbol");
+  if (p === "/api/candles") {
+    tooLong(q.symbol, 80, "Symbol");
+    const limit = Number(q.limit || 500);
+    if (!Number.isFinite(limit) || limit < 10 || limit > 500)
+      throw httpError(400, "Public charts allow 10 to 500 bars");
+  }
+  if (p === "/api/quotes") {
+    const symbols = String(q.symbols || "").split(",").filter(Boolean);
+    if (!symbols.length || symbols.length > 25)
+      throw httpError(400, "Public quotes allow 1 to 25 symbols");
+    if (symbols.some((symbol) => symbol.length > 40))
+      throw httpError(400, "A public quote symbol is too long");
+  }
+  if (p === "/api/bdp") {
+    const securities = String(q.securities || q.security || "")
+      .split(",")
+      .filter(Boolean);
+    const fields = String(q.fields || "").split(",").filter(Boolean);
+    if (securities.length > 5 || fields.length > 15)
+      throw httpError(400, "Public BDP allows at most 5 securities and 15 fields");
+  }
+  if (p === "/api/bdh") {
+    const fields = String(q.fields || "").split(",").filter(Boolean);
+    if (fields.length > 15) throw httpError(400, "Public BDH allows at most 15 fields");
+    const today = new Date().toISOString().slice(0, 10);
+    const end = bbg.parseDate(q.end, today);
+    const start = bbg.parseDate(q.start, bbg.parseDate("-1Y"));
+    const oldest = new Date(`${end}T00:00:00Z`);
+    oldest.setUTCFullYear(oldest.getUTCFullYear() - 2);
+    if (
+      Date.parse(`${start}T00:00:00Z`) > Date.parse(`${end}T00:00:00Z`) ||
+      Date.parse(`${start}T00:00:00Z`) < oldest.getTime()
+    )
+      throw httpError(400, "Public BDH history is limited to two years");
+  }
+  if (p === "/api/fn/board") {
+    const symbols = String(q.symbols || "").split(",").filter(Boolean);
+    if (symbols.length > 25) throw httpError(400, "Public boards allow at most 25 symbols");
+  }
+  if (p === "/api/earnings" || p === "/api/dividends") {
+    const days = Number(q.days || 5);
+    if (!Number.isInteger(days) || days < 1 || days > 30)
+      throw httpError(400, "Public calendars allow 1 to 30 days");
+  }
+  if (p === "/api/fn/btst") {
+    if (!/^[1-5]$/.test(String(q.strategy || "1")))
+      throw httpError(400, "Public backtests allow preset strategies 1 to 5 only");
+    if (q.tf && !["D", "W"].includes(String(q.tf).toUpperCase()))
+      throw httpError(400, "Public backtests allow daily or weekly bars");
+  }
+  if (p === "/api/fn/top") tooLong(q.group, 40, "News group");
+  if (p === "/api/fn/cot") tooLong(q.market, 40, "Market");
+}
+
+const PUBLIC_SCAN_MAX_NUMBER = 1_000_000;
+const PUBLIC_SCAN_MAX_WINDOW = 400;
+const PUBLIC_SCAN_SOURCE_VALUES = new Set([
+  "open",
+  "high",
+  "low",
+  "close",
+  "volume",
+  "hl2",
+  "hlc3",
+  "ohlc4",
+  "hlcc4",
+]);
+const PUBLIC_SCAN_WINDOW_KEYS = new Set([
+  "length",
+  "fast",
+  "slow",
+  "short",
+  "long",
+  "signal",
+  "wma",
+  "roc1",
+  "roc2",
+  "roc3",
+  "roc4",
+  "sma1",
+  "sma2",
+  "sma3",
+  "sma4",
+  "rsiLength",
+  "streakLength",
+  "rankLength",
+  "k",
+  "smoothK",
+  "d",
+  "smoothD",
+  "stochLength",
+  "diLength",
+  "adxSmoothing",
+  "atrLength",
+  "p",
+  "q",
+  "conversion",
+  "base",
+  "spanB",
+  "displacement",
+  "jawLength",
+  "jawOffset",
+  "teethLength",
+  "teethOffset",
+  "lipsLength",
+  "lipsOffset",
+  "left",
+  "right",
+  "depth",
+  "maLength",
+  "lookback",
+  "minHistory",
+  "rows",
+  "periods",
+]);
+const isRecord = (value) =>
+  value && typeof value === "object" && !Array.isArray(value);
+
+function validatePublicIndicator(key, spec) {
+  if (!isRecord(spec) || typeof spec.id !== "string" || !BY_ID[spec.id])
+    throw httpError(400, `Public scan indicator "${key}" is unknown`);
+  const def = BY_ID[spec.id];
+  const params = spec.params === undefined ? {} : spec.params;
+  if (!isRecord(params))
+    throw httpError(400, `Public scan indicator "${key}" params must be an object`);
+  const inputs = new Map((def.inputs || []).map((input) => [input.key, input]));
+  for (const [param, value] of Object.entries(params)) {
+    const input = inputs.get(param);
+    if (!input) throw httpError(400, `Public scan indicator "${key}" has an unknown parameter "${param}"`);
+    if (input.type === "source") {
+      if (typeof value !== "string" || !PUBLIC_SCAN_SOURCE_VALUES.has(value))
+        throw httpError(400, `Public scan indicator "${key}" source is invalid`);
+      continue;
+    }
+    if (input.type === "select") {
+      if (typeof value !== "string" || !input.options?.includes(value))
+        throw httpError(400, `Public scan indicator "${key}" parameter "${param}" is invalid`);
+      continue;
+    }
+    if (input.type === "int") {
+      const max = PUBLIC_SCAN_WINDOW_KEYS.has(param) ? PUBLIC_SCAN_MAX_WINDOW : PUBLIC_SCAN_MAX_NUMBER;
+      const min = input.min ?? 1;
+      if (!Number.isSafeInteger(value) || value < min || value > max)
+        throw httpError(400, `Public scan indicator "${key}" parameter "${param}" must be an integer from ${min} to ${max}`);
+      continue;
+    }
+    if (input.type === "float" || input.type === "time") {
+      if (typeof value !== "number" || !Number.isFinite(value) || Math.abs(value) > PUBLIC_SCAN_MAX_NUMBER)
+        throw httpError(400, `Public scan indicator "${key}" parameter "${param}" must be a finite number within ±${PUBLIC_SCAN_MAX_NUMBER}`);
+      if (spec.id === "alma" && param === "offset" && (value < 0 || value > 1))
+        throw httpError(400, `Public scan indicator "${key}" offset must be between 0 and 1`);
+      if (spec.id === "alma" && param === "sigma" && value <= 0)
+        throw httpError(400, `Public scan indicator "${key}" sigma must be greater than 0`);
+    }
+  }
+}
+
+function validatePublicScan(body) {
+  const symbols = Array.isArray(body.symbols) ? body.symbols : [];
+  const rules = Array.isArray(body.rules) ? body.rules : [];
+  if (symbols.length > 20) throw httpError(400, "Public scans allow at most 20 symbols");
+  if (rules.length > 6) throw httpError(400, "Public scans allow at most 6 rules");
+  if (body.indicators !== undefined) {
+    if (!isRecord(body.indicators)) throw httpError(400, "Public scan indicators must be an object");
+    const indicators = Object.entries(body.indicators);
+    if (indicators.length > 8) throw httpError(400, "Public scans allow at most 8 indicators");
+    for (const [key, spec] of indicators) validatePublicIndicator(key, spec);
+  }
+  if (symbols.some((symbol) => typeof symbol !== "string" || symbol.length > 40))
+    throw httpError(400, "Public scan symbols must be short strings");
+  if (rules.some((rule) => !rule || typeof rule !== "object" || Array.isArray(rule)))
+    throw httpError(400, "Public scan rules must be objects");
+}
+
+function publicCacheStart(req, res, config, p) {
+  if (!config.publicDemo || req.method !== "GET" || !PUBLIC_CACHEABLE.has(p))
+    return false;
+  const key = `${req.method}:${req.url}`;
+  const hit = config.cache.get(key);
+  if (hit) {
+    res.writeHead(hit.status, {
+      ...(res._securityHeaders || {}),
+      ...hit.headers,
+      "X-Amber-Cache": "HIT",
+    });
+    res.end(hit.body);
+    return true;
+  }
+  res._publicCache = {
+    cacheControl: `public, max-age=${Math.max(1, Math.floor(config.cacheTtlMs / 1000))}`,
+    put: (status, body, headers) => config.cache.put(key, status, body, headers),
+  };
+  return false;
 }
 
 async function readBody(req, limit = 2e6) {
@@ -76,12 +553,12 @@ async function readBody(req, limit = 2e6) {
   return body;
 }
 
-// The server only answers to this machine's browser. Writes need a custom header, which a random
-// website can't add to a cross-site request, so other pages can't drive your terminal.
-function allowed(req) {
-  const host = (req.headers.host || "")
-    .replace(/:\d+$/, "")
-    .replace(/^\[|\]$/g, "");
+// The server only answers to this machine's browser in local mode. Writes need a custom header, which a
+// random website can't add to a cross-site request, so other pages can't drive your terminal. Public mode
+// instead accepts only the configured reverse-proxy host; it never widens this to arbitrary Host headers.
+function allowed(req, config) {
+  const host = hostName(req.headers.host || "");
+  if (config.publicDemo) return host === config.publicHost;
   const okHosts = new Set(["localhost", "127.0.0.1", "::1", ...lanAddresses()]);
   if (!okHosts.has(host)) return false;
   if (req.method !== "GET" && req.method !== "HEAD") {
@@ -112,6 +589,7 @@ function serveStatic(res, baseDir, rel) {
   fs.stat(file, (err, st) => {
     if (err || !st.isFile()) return send(res, 404, "Not found");
     res.writeHead(200, {
+      ...(res._securityHeaders || {}),
       "Content-Type": MIME[path.extname(file)] || "application/octet-stream",
       "Cache-Control": rel.startsWith("vendor/")
         ? "public, max-age=86400"
@@ -165,8 +643,8 @@ function broadcast(type, payload) {
   const msg = `event: ${type}\ndata: ${JSON.stringify(payload)}\n\n`;
   for (const res of clients) res.write(msg);
 }
-alerts.onFire((e) => broadcast("alert", e));
-setInterval(() => {
+if (!PUBLIC_DEMO_ENV) alerts.onFire((e) => broadcast("alert", e));
+if (!PUBLIC_DEMO_ENV) setInterval(() => {
   for (const res of clients) res.write(": keep-alive\n\n");
 }, 25000).unref();
 
@@ -185,13 +663,27 @@ async function mapLimit(items, n, fn) {
 }
 
 // ---------- routes ----------
-async function handle(req, res) {
-  if (!allowed(req))
+async function handle(req, res, config) {
+  if (!allowed(req, config))
     return send(
       res,
       403,
-      "Forbidden: Amber Terminal only answers to this computer.",
+      config.publicDemo
+        ? "Forbidden: use the configured public demo host."
+        : "Forbidden: Amber Terminal only answers to this computer.",
     );
+  if (config.publicDemo) {
+    const retryAfter = rateLimited(req, config);
+    if (retryAfter)
+      return send(
+        res,
+        429,
+        { error: "Too many requests. Try again shortly." },
+        { "Retry-After": String(retryAfter) },
+      );
+  }
+  if (String(req.url || "").length > (config.publicDemo ? 4096 : 100000))
+    return send(res, 414, "Request URL too long");
   const url = new URL(req.url, "http://localhost");
   let p;
   try {
@@ -199,7 +691,18 @@ async function handle(req, res) {
   } catch {
     return send(res, 400, "Bad URL");
   }
+  if (config.publicDemo) {
+    const read = req.method === "GET" || req.method === "HEAD";
+    if (p.startsWith("/api/")) {
+      if (!publicRouteAllowed(p, req.method))
+        return send(res, 403, { error: "This route is disabled in public demo mode." });
+    } else if (!read || p.startsWith("/custom/")) {
+      return send(res, 403, { error: "This route is disabled in public demo mode." });
+    }
+  }
   const q = Object.fromEntries(url.searchParams);
+  if (config.publicDemo) enforcePublicQuery(p, q);
+  if (publicCacheStart(req, res, config, p)) return;
 
   if (!p.startsWith("/api/")) {
     if (p === "/" || p === "/index.html")
@@ -209,7 +712,16 @@ async function handle(req, res) {
   }
 
   try {
+    if (p === "/api/config")
+      return send(res, 200, { publicDemo: config.publicDemo });
     if (p === "/api/health") {
+      if (config.publicDemo)
+        return send(res, 200, {
+          ok: true,
+          app: "amber-terminal",
+          version: VERSION,
+          publicDemo: true,
+        });
       return send(res, 200, {
         ok: true,
         app: "amber-terminal",
@@ -231,14 +743,21 @@ async function handle(req, res) {
       return send(
         res,
         200,
-        await data.getCandles(q.symbol, q.tf || "1D", q.limit),
+        await data.getCandles(
+          q.symbol,
+          q.tf || "1D",
+          config.publicDemo ? Math.min(Number(q.limit) || 500, 500) : q.limit,
+        ),
       );
     if (p === "/api/quotes")
       return send(
         res,
         200,
         await data.getQuotes(
-          (q.symbols || "").split(",").filter(Boolean).slice(0, 200),
+          (q.symbols || "")
+            .split(",")
+            .filter(Boolean)
+            .slice(0, config.publicDemo ? 25 : 200),
         ),
       );
     if (p === "/api/calendar")
@@ -256,12 +775,14 @@ async function handle(req, res) {
       return send(res, 200, rows);
     }
     if (p === "/api/scan" && req.method === "POST") {
-      const body = await readBody(req);
+      const body = await readBody(req, config.publicDemo ? 100e3 : 2e6);
       if (!Array.isArray(body.symbols) || !Array.isArray(body.rules ?? []))
         throw httpError(400, "Send { symbols: [...], rules: [...] }");
-      const symbols = body.symbols.slice(0, 150);
+      if (config.publicDemo) validatePublicScan(body);
+      const maxSymbols = config.publicDemo ? 20 : 150;
+      const symbols = body.symbols.slice(0, maxSymbols);
       const rules = body.rules || [];
-      const results = await mapLimit(symbols, 4, async (symbol) => {
+      const results = await mapLimit(symbols, config.publicDemo ? 2 : 4, async (symbol) => {
         try {
           const { candles } = await data.getCandles(
             symbol,
@@ -444,19 +965,25 @@ function openBrowser(url) {
   }
 }
 
-export function start(port = START_PORT, tries = 20) {
+export function start(port = START_PORT, tries = 20, overrides = {}) {
+  const config = createRuntimeConfig(overrides);
+  if (config.publicDemo !== PUBLIC_DEMO_ENV)
+    throw new Error(
+      "PUBLIC_DEMO must be set before importing server.js; runtime overrides cannot switch modes",
+    );
   return new Promise((resolve, reject) => {
     const server = http.createServer((req, res) => {
-      handle(req, res).catch((e) => {
-        if (!res.headersSent) send(res, 500, { error: e.message });
+      if (config.publicDemo) res._securityHeaders = PUBLIC_SECURITY_HEADERS;
+      handle(req, res, config).catch((e) => {
+        if (!res.headersSent) send(res, e.status || 500, { error: e.message });
       });
     });
     server.once("error", (e) => {
       if (e.code === "EADDRINUSE" && tries > 0)
-        resolve(start(port + 1, tries - 1));
+        resolve(start(port + 1, tries - 1, overrides));
       else reject(e);
     });
-    server.listen(port, HOST, () => resolve({ server, port }));
+    server.listen(port, config.bindHost, () => resolve({ server, port }));
   });
 }
 
@@ -466,15 +993,21 @@ const isMain =
 const relaunched = isMain ? relaunchForProxy() : null;
 if (relaunched) process.exit(await relaunched);
 if (isMain) {
-  for (const c of listCustom()) await loadCustom(c.file);
+  const config = createRuntimeConfig();
+  if (!config.publicDemo)
+    for (const c of listCustom()) await loadCustom(c.file);
   const { port } = await start();
   const url = `http://localhost:${port}`;
-  alerts.start();
+  if (!config.publicDemo) alerts.start();
   console.log(
-    `\n  Amber Terminal ${VERSION} is running\n\n  Open:  ${url}\n  Stop:  Ctrl+C\n  Data:  ${store.DATA_DIR}\n`,
+    `\n  Amber Terminal ${VERSION} is running\n\n  Open:  ${url}\n  Stop:  Ctrl+C\n  Data:  ${config.publicDemo ? "browser localStorage only (public demo)" : store.DATA_DIR}\n`,
   );
+  if (config.publicDemo)
+    console.log(
+      `  PUBLIC DEMO: host ${config.publicHost}; anonymous state, alerts, webhooks, custom code, PTQ and local diagnostics are disabled.\n`,
+    );
   if (proxyNote()) console.log(`  ${proxyNote()}\n`);
-  if (HOST !== "127.0.0.1" && HOST !== "localhost")
+  if (!config.publicDemo && HOST !== "127.0.0.1" && HOST !== "localhost")
     console.log(
       `  Also on your network: ${lanAddresses()
         .filter((a) => a.includes(".") && a !== "127.0.0.1")

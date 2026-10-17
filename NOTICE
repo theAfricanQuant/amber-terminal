@@ -10,6 +10,4 @@ The chart keeps TradingView's attribution logo, as that licence asks.
 Amber Terminal is an independent project. It is not affiliated with, endorsed by,
 or connected to TradingView, Inc. "TradingView" is a trademark of TradingView, Inc.
 
-Market data comes from public endpoints of Binance, Coinbase, Kraken, Nasdaq,
-Yahoo Finance and Forex Factory, each under its own terms. Use it for your own
-personal analysis. Nothing in this software is financial advice.
+Market, company, news, economic and other data may be fetched from third-party providers and public sources, including Binance, Bloomberg RSS, CNBC, CBOE, Coinbase, FRED, Forex Factory, Kraken, Nasdaq, SEC/EDGAR and Yahoo Finance. This list is illustrative, not exhaustive. Each source's own terms, licences or public-use rules govern its data; this software's MIT licence grants no rights to third-party content. Use for personal analysis only. Nothing in this software is financial advice.

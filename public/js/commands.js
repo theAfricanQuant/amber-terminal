@@ -1,6 +1,7 @@
 // The command line: "<ticker> [exchange] [yellow key] [function]", then GO.
 //   AAPL US EQUITY DES   VOD LN DES   SPX INDEX GP   CL1 COMDTY   EURUSD CURNCY   BTC   WEI   TOP
 // A security sets the panel's subject; a function runs on it (or on its own, for market-wide screens).
+import { isPublicDemo } from "./api.js";
 import { FUNCS } from "./fn/index.js";
 
 import { YELLOW, INDICES, GENERICS, toSecurity } from "./securities.js";
@@ -67,6 +68,8 @@ export function securityQuery(input) {
 const EXCH_CODES = new Set(["US", "UN", "UW", "UQ", "LN", "GR", "GY", "FP", "NA", "SM", "IM", "SW", "SE", "JP", "JT", "HK", "CN", "CT", "AU", "AT", "IN", "IS", "IB", "KS", "TT", "SP", "BZ", "MM", "SS", "NO", "DC", "FH", "BB", "ID", "PL", "AV"]);
 
 // Autocomplete: functions whose code or name starts with what's typed.
+const PUBLIC_DISABLED_FUNCS = new Set(["ALRT", "PORT", "API", "ASK", "DS", "SURP"]);
+
 export function suggestions(input) {
   const w = String(input || "")
     .toUpperCase()
@@ -75,6 +78,7 @@ export function suggestions(input) {
     .pop();
   if (!w) return [];
   return Object.values(FUNCS)
+    .filter((f) => !(isPublicDemo() && PUBLIC_DISABLED_FUNCS.has(f.id)))
     .filter((f) => f.id.startsWith(w) || f.name.toUpperCase().includes(w))
     .sort(
       (a, b) =>

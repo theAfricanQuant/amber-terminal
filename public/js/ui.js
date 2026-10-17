@@ -89,7 +89,7 @@ export function priceChart(host, { type = "line", height } = {}) {
       textColor: css("--amber"),
       fontFamily: css("--mono"),
       fontSize: 11,
-      attributionLogo: false, // credited on the DATA screen and in the README instead
+      attributionLogo: true, // TradingView's required attribution remains visible
     },
     grid: { vertLines: { color: "#161616" }, horzLines: { color: "#161616" } },
     rightPriceScale: { borderColor: "#262626" },
@@ -123,7 +123,7 @@ export function lineChart(host, seriesList, { percent = false } = {}) {
       textColor: css("--amber"),
       fontFamily: css("--mono"),
       fontSize: 11,
-      attributionLogo: false, // credited on the DATA screen and in the README instead
+      attributionLogo: true, // TradingView's required attribution remains visible
     },
     grid: { vertLines: { color: "#161616" }, horzLines: { color: "#161616" } },
     rightPriceScale: { borderColor: "#262626", mode: percent ? 2 : 0 },

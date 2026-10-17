@@ -1,6 +1,46 @@
 // Talking to the local server, and the number and date formats every screen shares.
 
+const PUBLIC_STATE_KEY = "amber-terminal-public-state-v1";
+let publicDemo = false;
+let browserState;
+
+function loadBrowserState() {
+  if (browserState) return browserState;
+  try {
+    const raw = window.localStorage.getItem(PUBLIC_STATE_KEY);
+    browserState = raw ? JSON.parse(raw) : {};
+  } catch {
+    browserState = {};
+  }
+  return browserState && typeof browserState === "object" && !Array.isArray(browserState)
+    ? browserState
+    : {};
+}
+
+function saveBrowserState(next) {
+  browserState = next;
+  try {
+    window.localStorage.setItem(PUBLIC_STATE_KEY, JSON.stringify(next));
+  } catch {
+    // Private browsing or a full quota should not stop market screens from loading.
+  }
+}
+
+const isStateUrl = (url) => String(url).split("?")[0] === "/api/state";
+export const isPublicDemo = () => publicDemo;
+export function configureRuntime(config = {}) {
+  publicDemo = Boolean(config.publicDemo);
+  if (publicDemo) loadBrowserState();
+}
+
 async function req(method, url, body) {
+  if (publicDemo && isStateUrl(url)) {
+    if (method === "GET") return { ...loadBrowserState() };
+    if (method === "PUT") {
+      saveBrowserState({ ...loadBrowserState(), ...(body || {}) });
+      return { ok: true };
+    }
+  }
   const r = await fetch(url, {
     method,
     headers: body
@@ -32,7 +72,7 @@ export const api = {
   candles: (symbol, tf, limit = 1500) =>
     req(
       "GET",
-      `/api/candles?symbol=${encodeURIComponent(symbol)}&tf=${encodeURIComponent(tf)}&limit=${limit}`,
+      `/api/candles?symbol=${encodeURIComponent(symbol)}&tf=${encodeURIComponent(tf)}&limit=${isPublicDemo() ? Math.min(limit, 500) : limit}`,
     ),
   quotes: (symbols) =>
     req("GET", `/api/quotes?symbols=${encodeURIComponent(symbols.join(","))}`),

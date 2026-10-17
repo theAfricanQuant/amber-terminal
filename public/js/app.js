@@ -1,6 +1,6 @@
 // Amber Terminal: four panels, each with its own command line, plus the global one at the top.
 // The global command runs in the active panel. Your layout is saved to the data folder.
-import { api, esc, px, pct, cls } from "./api.js";
+import { api, configureRuntime, isPublicDemo, esc, px, pct, cls } from "./api.js";
 import { parse, defaultFn, suggestions, securityQuery } from "./commands.js";
 import { FUNCS } from "./fn/index.js";
 import { lookupList, bbgCode } from "./securities.js";
@@ -16,6 +16,11 @@ const $ = (s, el = document) => el.querySelector(s);
 const grid = $("#grid");
 const LAYOUTS = { 1: "one", 2: "two", 4: "" };
 const DEFAULT = ["WEI", "TOP", "SPX INDEX GP", "ECO"];
+const PUBLIC_DISABLED_FUNCS = new Set(["ALRT", "PORT", "API", "ASK", "DS", "SURP"]);
+const runtime = await api
+  .get("/api/config")
+  .catch(() => ({ publicDemo: false }));
+configureRuntime(runtime);
 
 let state = { layout: 4, panels: DEFAULT.slice(), active: 0 };
 const panels = [];
@@ -108,6 +113,8 @@ class Panel {
     if (sec) this.sec = sec;
     if (!fn) fn = defaultFn(this.sec);
     const f = FUNCS[fn];
+    if (isPublicDemo() && PUBLIC_DISABLED_FUNCS.has(fn))
+      return toast(`${fn} is disabled in the public demo.`, true);
     if (!f)
       return toast(`No function called ${fn}. Type HELP for the list.`, true);
     if (f.needs && !this.sec)
@@ -343,7 +350,10 @@ const KEYS = [
   ["DATA"],
 ];
 $("#keys").innerHTML =
-  KEYS.filter(([k, y]) => y || FUNCS[k])
+  KEYS.filter(
+    ([k, y]) =>
+      (y || FUNCS[k]) && !(isPublicDemo() && PUBLIC_DISABLED_FUNCS.has(k)),
+  )
     .map(
       ([k, y]) =>
         `<button class="key ${y ? "" : "fn"}" data-k="${k}"${fkeyOf[k] ? ` title="${fkeyOf[k]} on the keyboard"` : ""}>${fkeyOf[k] ? `<small>${fkeyOf[k]}</small>` : ""}${k}</button>`,
@@ -412,7 +422,7 @@ setInterval(tape, 60e3);
 
 // Alerts fire on the server (ALRT); the event stream brings them here as a toast and a desktop notification.
 function listenForAlerts() {
-  if (!window.EventSource) return;
+  if (isPublicDemo() || !window.EventSource) return;
   const es = new EventSource("/api/events");
   es.addEventListener("alert", (e) => {
     let a;

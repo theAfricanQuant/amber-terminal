@@ -32,6 +32,7 @@ const serve = (...r) => {
 };
 
 const top = await import("../lib/fn/top.js");
+const { parseRss } = await import("../lib/market-info.js");
 const cf = await import("../lib/fn/cf.js");
 const insd = await import("../lib/fn/insd.js");
 const hds = await import("../lib/fn/hds.js");
@@ -63,6 +64,14 @@ test("TOP keeps only web links", () => {
   const xml = `<rss><channel><item><title>Bad</title><link>javascript:alert(1)</link></item><item><title>Good</title><link>https://example.com/a</link></item></channel></rss>`;
   assert.deepEqual(
     top.parseFeed(xml, "X").map((i) => i.title),
+    ["Good"],
+  );
+});
+
+test("the shared RSS parser drops non-http(s) links before rendering", () => {
+  const xml = `<rss><channel><item><title>Bad</title><link>data:text/html,boom</link></item><item><title>Good</title><link>http://example.com/a</link></item></channel></rss>`;
+  assert.deepEqual(
+    parseRss(xml, "X").map((i) => i.title),
     ["Good"],
   );
 });

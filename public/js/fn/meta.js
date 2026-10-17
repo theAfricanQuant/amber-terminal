@@ -1,11 +1,17 @@
 // HELP lists every function; DATA says where each one's numbers come from and how fresh they are.
-import { esc } from "../api.js";
+import { esc, isPublicDemo } from "../api.js";
 import { table, sect, html } from "../ui.js";
 import { FUNCS } from "./index.js";
 
+const PUBLIC_DISABLED_FUNCS = new Set(["ALRT", "PORT", "API", "ASK", "DS", "SURP"]);
+const visibleFuncs = () =>
+  Object.values(FUNCS).filter(
+    (f) => !isPublicDemo() || !PUBLIC_DISABLED_FUNCS.has(f.id),
+  );
+
 const groups = () => {
   const g = {};
-  for (const f of Object.values(FUNCS)) (g[f.group || "Other"] ||= []).push(f);
+  for (const f of visibleFuncs()) (g[f.group || "Other"] ||= []).push(f);
   return g;
 };
 
@@ -53,12 +59,12 @@ export default [
       ctx.el.innerHTML = "";
       ctx.el.append(
         html(
-          `<p class="para">Every number here comes from a public source that needs no account and no API key. Crypto prices stream live from the exchanges. Stock, index and futures prices are public quotes that can run up to 15 minutes behind on some exchanges. It is not a paid exchange feed, so use your broker's prices to place orders.</p><p class="para dim">Charts are drawn with <a href="https://www.tradingview.com/" target="_blank" rel="noopener">TradingView Lightweight Charts™</a>, Copyright TradingView, Inc., used under the Apache License 2.0.</p>`,
+          `<p class="para">Amber Terminal is an independent project. It is not affiliated with, endorsed by, or connected to Bloomberg L.P. Every number here comes from a public source that needs no account and no API key. Crypto prices stream live from the exchanges. Stock, index and futures prices are public quotes that can run up to 15 minutes behind on some exchanges. It is not a paid exchange feed, so use your broker's prices to place orders.</p><p class="para dim">Charts are drawn with <a href="https://www.tradingview.com/" target="_blank" rel="noopener">TradingView Lightweight Charts™</a>, Copyright TradingView, Inc., used under the Apache License 2.0.</p>`,
         ),
       );
       ctx.el.append(
         table(
-          Object.values(FUNCS).filter((f) => f.group !== "Help"),
+          visibleFuncs().filter((f) => f.group !== "Help"),
           [
             { key: "id", label: "Code", left: true, lbl: true },
             { key: "name", label: "Function", left: true },
