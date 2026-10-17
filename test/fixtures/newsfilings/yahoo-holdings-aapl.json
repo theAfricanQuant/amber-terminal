@@ -1,0 +1,112 @@
+{
+ "quoteSummary": {
+  "result": [
+   {
+    "institutionOwnership": {
+     "maxAge": 1,
+     "ownershipList": [
+      {
+       "maxAge": 1,
+       "reportDate": {
+        "raw": 1782777600,
+        "fmt": "2026-06-30"
+       },
+       "organization": "Blackrock Inc.",
+       "pctHeld": {
+        "raw": 0.0797,
+        "fmt": "7.97%"
+       },
+       "position": {
+        "raw": 1162996939,
+        "fmt": "1.16B",
+        "longFmt": "1,162,996,939"
+       },
+       "value": {
+        "raw": 398861420261,
+        "fmt": "398.86B",
+        "longFmt": "398,861,420,261"
+       },
+       "pctChange": {
+        "raw": 0.016,
+        "fmt": "1.60%"
+       }
+      },
+      {
+       "maxAge": 1,
+       "reportDate": {
+        "raw": 1782777600,
+        "fmt": "2026-06-30"
+       },
+       "organization": "Vanguard Capital Management LLC",
+       "pctHeld": {
+        "raw": 0.0657,
+        "fmt": "6.57%"
+       },
+       "position": {
+        "raw": 959107911,
+        "fmt": "959.11M",
+        "longFmt": "959,107,911"
+       },
+       "value": {
+        "raw": 328935640961,
+        "fmt": "328.94B",
+        "longFmt": "328,935,640,961"
+       },
+       "pctChange": {
+        "raw": 0.0055,
+        "fmt": "0.55%"
+       }
+      },
+      {
+       "maxAge": 1,
+       "reportDate": {
+        "raw": 1782777600,
+        "fmt": "2026-06-30"
+       },
+       "organization": "State Street Corporation",
+       "pctHeld": {
+        "raw": 0.0421,
+        "fmt": "4.21%"
+       },
+       "position": {
+        "raw": 615129929,
+        "fmt": "615.13M",
+        "longFmt": "615,129,929"
+       },
+       "value": {
+        "raw": 210964955193,
+        "fmt": "210.96B",
+        "longFmt": "210,964,955,193"
+       },
+       "pctChange": {
+        "raw": 0.0212,
+        "fmt": "2.12%"
+       }
+      }
+     ]
+    },
+    "majorHoldersBreakdown": {
+     "maxAge": 1,
+     "insidersPercentHeld": {
+      "raw": 0.01648,
+      "fmt": "1.65%"
+     },
+     "institutionsPercentHeld": {
+      "raw": 0.66326,
+      "fmt": "66.33%"
+     },
+     "institutionsFloatPercentHeld": {
+      "raw": 0.67437,
+      "fmt": "67.44%"
+     },
+     "institutionsCount": {
+      "raw": 7697,
+      "fmt": "7.7k",
+      "longFmt": "7,697"
+     }
+    }
+   }
+  ],
+  "error": null
+ }
+}

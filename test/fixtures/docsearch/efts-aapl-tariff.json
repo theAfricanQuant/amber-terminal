@@ -1,0 +1,322 @@
+{
+ "took": 81,
+ "timed_out": false,
+ "hits": {
+  "total": {
+   "value": 7,
+   "relation": "eq"
+  },
+  "max_score": 10.627475,
+  "hits": [
+   {
+    "_index": "edgar_file",
+    "_id": "0001096906-26-000136:nlpc_px14a6g.htm",
+    "_score": 10.627475,
+    "_source": {
+     "ciks": [
+      "0000320193",
+      "0001958085"
+     ],
+     "period_ending": null,
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)",
+      "National Legal & Policy Center  (CIK 0001958085)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "PX14A6G"
+     ],
+     "file_date": "2026-01-22",
+     "biz_states": [
+      "CA",
+      "VA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "PX14A6G",
+     "adsh": "0001096906-26-000136",
+     "film_num": [
+      "26550967"
+     ],
+     "biz_locations": [
+      "Cupertino, CA",
+      "Falls Church, VA"
+     ],
+     "file_type": "PX14A6G",
+     "file_description": "NATIONAL LEGAL AND POLICY CENTER - PX14A6G",
+     "inc_states": [
+      "CA",
+      "DC"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0000320193-26-000018:a8-kex991q3202606272026.htm",
+    "_score": 9.100552,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2026-07-30",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": "2",
+     "root_forms": [
+      "8-K"
+     ],
+     "file_date": "2026-07-30",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "8-K",
+     "adsh": "0000320193-26-000018",
+     "film_num": [
+      "261223821"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "EX-99.1",
+     "file_description": "EX-99.1",
+     "inc_states": [
+      "CA"
+     ],
+     "items": [
+      "2.02",
+      "9.01"
+     ]
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0000320193-26-000006:aapl-20251227.htm",
+    "_score": 4.5083413,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2025-12-27",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-Q"
+     ],
+     "file_date": "2026-01-30",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "10-Q",
+     "adsh": "0000320193-26-000006",
+     "film_num": [
+      "26580330"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "10-Q",
+     "file_description": "10-Q",
+     "inc_states": [
+      "CA"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001308179-26-000008:aapl_courtesy-pdf.pdf",
+    "_score": 3.877336,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2026-02-24",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": "2",
+     "root_forms": [
+      "DEF 14A"
+     ],
+     "file_date": "2026-01-08",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "DEF 14A",
+     "adsh": "0001308179-26-000008",
+     "film_num": [
+      "26520008"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "DEF 14A",
+     "file_description": "DEFINITIVE PROXY STATEMENT",
+     "inc_states": [
+      "CA"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0000320193-26-000020:aapl-20260627.htm",
+    "_score": 3.6629853,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2026-06-27",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-Q"
+     ],
+     "file_date": "2026-07-31",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "10-Q",
+     "adsh": "0000320193-26-000020",
+     "film_num": [
+      "261225227"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "10-Q",
+     "file_description": "10-Q",
+     "inc_states": [
+      "CA"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001308179-26-000008:aapl014016-def14a.htm",
+    "_score": 3.6215878,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2026-02-24",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "DEF 14A"
+     ],
+     "file_date": "2026-01-08",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "DEF 14A",
+     "adsh": "0001308179-26-000008",
+     "film_num": [
+      "26520008"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "DEF 14A",
+     "file_description": "DEFINITIVE PROXY STATEMENT",
+     "inc_states": [
+      "CA"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0000320193-25-000079:aapl-20250927.htm",
+    "_score": 3.419798,
+    "_source": {
+     "ciks": [
+      "0000320193"
+     ],
+     "period_ending": "2025-09-27",
+     "file_num": [
+      "001-36743"
+     ],
+     "display_names": [
+      "Apple Inc.  (AAPL)  (CIK 0000320193)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2025-10-31",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "3571"
+     ],
+     "form": "10-K",
+     "adsh": "0000320193-25-000079",
+     "film_num": [
+      "251437791"
+     ],
+     "biz_locations": [
+      "Cupertino, CA"
+     ],
+     "file_type": "10-K",
+     "file_description": "10-K",
+     "inc_states": [
+      "CA"
+     ],
+     "items": []
+    }
+   }
+  ]
+ }
+}

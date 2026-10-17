@@ -1,0 +1,8 @@
+"Positions for account SYNTHETIC TEST DATA ONLY","","","","","","","","","","","","","","",
+"Symbol","Description","Qty (Quantity)","Price","Price Chng % (Price Change %)","Price Chng $ (Price Change $)","Mkt Val (Market Value)","Day Chng % (Day Change %)","Day Chng $ (Day Change $)","Cost Basis","Gain $ (Gain/Loss $)","Gain % (Gain/Loss %)","Reinvest?","Reinvest Capital Gains?","Security Type",
+"AAPL","SYNTHETIC TEST POSITION","2","$123.45","0.00%","$0.00","$246.90","0.00%","$0.00","$200.00","$46.90","23.45%","No","N/A","Equity",
+"NVDA","SYNTHETIC TEST POSITION","3","$111.10","0.00%","$0.00","$333.30","0.00%","$0.00","$300.00","$33.30","11.10%","No","N/A","Equity",
+"VTI","SYNTHETIC TEST POSITION","4","$100.00","0.00%","$0.00","$400.00","0.00%","$0.00","$400.00","$0.00","0.00%","Yes","Yes","ETFs & Closed End Funds",
+"AAPL 01/01/2030 500.00 C","SYNTHETIC TEST OPTION","1","$1.00","0.00%","$0.00","$100.00","0.00%","$0.00","$100.00","$0.00","0.00%","N/A","N/A","Option",
+"Cash & Cash Investments","--","--","--","--","--","$54.32","0%","$0.00","--","--","--","--","--","Cash and Money Market",
+"Account Total","--","--","--","--","--","$1,234.50","0.00%","$0.00","$1,000.00","$234.50","23.45%","--","--","--",

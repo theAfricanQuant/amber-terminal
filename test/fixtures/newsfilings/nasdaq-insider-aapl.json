@@ -1,0 +1,173 @@
+{
+ "data": {
+  "title": null,
+  "numberOfTrades": {
+   "asOf": null,
+   "headers": {
+    "insiderTrade": "Insider Trade",
+    "months3": "3 Months",
+    "months12": "12 Months"
+   },
+   "rows": [
+    {
+     "insiderTrade": "Number of Open Market Buys",
+     "months3": "0",
+     "months12": "0"
+    },
+    {
+     "insiderTrade": "Number of Sells",
+     "months3": "18",
+     "months12": "41"
+    },
+    {
+     "insiderTrade": "Total Insider Trades",
+     "months3": "18",
+     "months12": "41"
+    }
+   ]
+  },
+  "numberOfSharesTraded": {
+   "asOf": null,
+   "headers": {
+    "insiderTrade": "Insider Trade",
+    "months3": "3 Months",
+    "months12": "12 Months"
+   },
+   "rows": [
+    {
+     "insiderTrade": "Number of Shares Bought",
+     "months3": "0",
+     "months12": "0"
+    },
+    {
+     "insiderTrade": "Number of Shares Sold",
+     "months3": "676,371",
+     "months12": "1,357,575"
+    },
+    {
+     "insiderTrade": "Total Shares Traded",
+     "months3": "676,371",
+     "months12": "1,357,575"
+    },
+    {
+     "insiderTrade": "Net Activity",
+     "months3": "(676,371)",
+     "months12": "(1,357,575)"
+    }
+   ]
+  },
+  "transactionTable": {
+   "totalRecords": "110",
+   "table": {
+    "asOf": null,
+    "headers": {
+     "insider": "Insider",
+     "relation": "Relation",
+     "lastDate": "Last Date",
+     "transactionType": "Transaction",
+     "ownType": "Owner Type",
+     "sharesTraded": "Shares Traded",
+     "lastPrice": "Price",
+     "sharesHeld": "Shares Held"
+    },
+    "rows": [
+     {
+      "insider": "NEWSTEAD JENNIFER",
+      "relation": "Officer",
+      "lastDate": "10/06/2026",
+      "transactionType": "Automatic Sell",
+      "ownType": "Direct",
+      "sharesTraded": "2,399",
+      "lastPrice": "$332.01",
+      "sharesHeld": "39,593",
+      "url": "/market-activity/insiders/newstead-jennifer-1089520"
+     },
+     {
+      "insider": "TERNUS JOHN",
+      "relation": "Officer",
+      "lastDate": "10/02/2026",
+      "transactionType": "Automatic Sell",
+      "ownType": "Direct",
+      "sharesTraded": "25,412",
+      "lastPrice": "$331.38",
+      "sharesHeld": "59,567",
+      "url": "/market-activity/insiders/ternus-john-1400579"
+     },
+     {
+      "insider": "O'BRIEN DEIRDRE",
+      "relation": "Officer",
+      "lastDate": "10/02/2026",
+      "transactionType": "Automatic Sell",
+      "ownType": "Direct",
+      "sharesTraded": "46,389",
+      "lastPrice": "$333.35",
+      "sharesHeld": "136,810",
+      "url": "/market-activity/insiders/obrien-deirdre-1076854"
+     },
+     {
+      "insider": "COOK TIMOTHY D",
+      "relation": "Officer",
+      "lastDate": "10/02/2026",
+      "transactionType": "Automatic Sell",
+      "ownType": "Direct",
+      "sharesTraded": "191,753",
+      "lastPrice": "$331.44",
+      "sharesHeld": "3,264,168",
+      "url": "/market-activity/insiders/cook-timothy-d-628915"
+     },
+     {
+      "insider": "COOK TIMOTHY D",
+      "relation": "Officer",
+      "lastDate": "10/02/2026",
+      "transactionType": "Disposition (Non Open Market)",
+      "ownType": "Direct",
+      "sharesTraded": "26,325",
+      "lastPrice": "$0.00",
+      "sharesHeld": "3,237,843",
+      "url": "/market-activity/insiders/cook-timothy-d-628915"
+     },
+     {
+      "insider": "KHAN SABIH",
+      "relation": "Officer",
+      "lastDate": "10/01/2026",
+      "transactionType": "Disposition (Non Open Market)",
+      "ownType": "Direct",
+      "sharesTraded": "52,854",
+      "lastPrice": "$330.32",
+      "sharesHeld": "1,120,919",
+      "url": "/market-activity/insiders/khan-sabih-1343463"
+     },
+     {
+      "insider": "KHAN SABIH",
+      "relation": "Officer",
+      "lastDate": "10/01/2026",
+      "transactionType": "Option Execute",
+      "ownType": "Direct",
+      "sharesTraded": "99,878",
+      "lastPrice": "",
+      "sharesHeld": "1,173,773",
+      "url": "/market-activity/insiders/khan-sabih-1343463"
+     },
+     {
+      "insider": "TERNUS JOHN",
+      "relation": "Officer",
+      "lastDate": "10/01/2026",
+      "transactionType": "Disposition (Non Open Market)",
+      "ownType": "Direct",
+      "sharesTraded": "49,054",
+      "lastPrice": "$330.32",
+      "sharesHeld": "84,979",
+      "url": "/market-activity/insiders/ternus-john-1400579"
+     }
+    ]
+   }
+  },
+  "filerTransactionTable": null
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

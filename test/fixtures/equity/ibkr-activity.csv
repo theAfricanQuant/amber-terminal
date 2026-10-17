@@ -1,0 +1,12 @@
+Statement,Data,Note,"Synthetic fixture for parser tests only; not an account statement"
+Statement,Header,Field Name,Field Value
+Statement,Data,Title,Activity Statement
+Statement,Data,Period,"Synthetic test period"
+Open Positions,Header,DataDiscriminator,Asset Category,Currency,Symbol,Quantity,Mult,Cost Price,Cost Basis,Close Price,Value,Unrealized P/L,Code
+Open Positions,Data,Summary,Stocks,USD,AMD,2,1,10,20,11,22,2,
+Open Positions,Data,Summary,Stocks,USD,BRK B,1,1,100,100,110,110,10,
+Open Positions,Data,Summary,Stocks,USD,BKNG,1,1,1000,1000,1010,1010,10,
+Open Positions,Total,,Stocks,USD,,,,,1120,,1142,22,
+Open Positions,Data,Summary,Stocks,GBP,VOD,4,1,1,4,1.5,6,2,
+Open Positions,Data,Summary,Equity and Index Options,USD,SPY 01JAN30 500 P,1,100,1,100,1,100,0,
+Open Positions,Data,Summary,Crypto,USD,ETH,0.5,1,1000,500,1100,550,50,

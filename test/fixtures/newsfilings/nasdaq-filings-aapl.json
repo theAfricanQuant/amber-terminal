@@ -1,0 +1,138 @@
+{
+ "data": {
+  "symbol": "AAPL",
+  "totalRecords": 46,
+  "latest": [
+   {
+    "label": "10-K",
+    "value": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=319541956&type=HTML&symbol=AAPL&companyName=Apple+Inc.&formType=10-K&formDescription=Annual+report+pursuant+to+Section+13+or+15%28d%29&dateFiled=2025-10-31"
+   },
+   {
+    "label": "10-Q",
+    "value": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320230447&type=HTML&symbol=AAPL&cdn=bb57e58f3f3ea79c7afb83fdb0236830&companyName=Apple+Inc.&formType=10-Q&formDescription=General+form+for+quarterly+reports+under+Section+13+or+15%28d%29&dateFiled=2026-07-31"
+   }
+  ],
+  "headers": {
+   "companyName": "Company Name",
+   "formType": "Form Type",
+   "filed": "Filed",
+   "period": "Period",
+   "view": "View"
+  },
+  "filterOptions": [
+   {
+    "group": "All",
+    "formtype": []
+   },
+   {
+    "group": "Annual Reports",
+    "formtype": [
+     "10-K",
+     "ARS"
+    ]
+   },
+   {
+    "group": "Quarterly Reports",
+    "formtype": [
+     "10-Q"
+    ]
+   },
+   {
+    "group": "Proxies and Info Statements",
+    "formtype": [
+     "PX14A6G",
+     "DEF 14A",
+     "DEFA14A"
+    ]
+   },
+   {
+    "group": "Insider Transactions",
+    "formtype": [
+     "4",
+     "3",
+     "SC 13G/A"
+    ]
+   },
+   {
+    "group": "8-K Related",
+    "formtype": [
+     "8-K"
+    ]
+   },
+   {
+    "group": "Registration Statements",
+    "formtype": [
+     "S-1",
+     "S-1A",
+     "424B4",
+     "FWP",
+     "S-8"
+    ]
+   },
+   {
+    "group": "Comment Letters",
+    "formtype": [
+     "NO ACT",
+     "UPLOAD",
+     "CORRESP"
+    ]
+   }
+  ],
+  "rows": [
+   {
+    "companyName": "Apple Inc.",
+    "reportingOwner": "NEWSTEAD JENNIFER",
+    "formType": "4",
+    "filed": "10/08/2026",
+    "period": "10/06/2026",
+    "view": {
+     "htmlLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320398157&type=HTML&symbol=AAPL&cdn=97be298d90d14674343e45282320f16e&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-08",
+     "docLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320398157&type=DOC&symbol=AAPL&cdn=97be298d90d14674343e45282320f16e&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-08",
+     "pdfLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320398157&type=PDF&symbol=AAPL&cdn=97be298d90d14674343e45282320f16e&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-08",
+     "xbrLink": "",
+     "ixbrlContent": "",
+     "xlsLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320398157&type=XLS&symbol=AAPL&cdn=97be298d90d14674343e45282320f16e&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-08",
+     "xBrlSubDoc": ""
+    }
+   },
+   {
+    "companyName": "Apple Inc.",
+    "reportingOwner": "COOK TIMOTHY D",
+    "formType": "4",
+    "filed": "10/05/2026",
+    "period": "10/01/2026",
+    "view": {
+     "htmlLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391331&type=HTML&symbol=AAPL&cdn=c0b86fe3b3b47db29777254624106c3f&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "docLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391331&type=DOC&symbol=AAPL&cdn=c0b86fe3b3b47db29777254624106c3f&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "pdfLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391331&type=PDF&symbol=AAPL&cdn=c0b86fe3b3b47db29777254624106c3f&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "xbrLink": "",
+     "ixbrlContent": "",
+     "xlsLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391331&type=XLS&symbol=AAPL&cdn=c0b86fe3b3b47db29777254624106c3f&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "xBrlSubDoc": ""
+    }
+   },
+   {
+    "companyName": "Apple Inc.",
+    "reportingOwner": "O'BRIEN DEIRDRE",
+    "formType": "4",
+    "filed": "10/05/2026",
+    "period": "10/01/2026",
+    "view": {
+     "htmlLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391326&type=HTML&symbol=AAPL&cdn=70f0dead2e41ec756c5f87b8627d4728&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "docLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391326&type=DOC&symbol=AAPL&cdn=70f0dead2e41ec756c5f87b8627d4728&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "pdfLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391326&type=PDF&symbol=AAPL&cdn=70f0dead2e41ec756c5f87b8627d4728&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "xbrLink": "",
+     "ixbrlContent": "",
+     "xlsLink": "https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320391326&type=XLS&symbol=AAPL&cdn=70f0dead2e41ec756c5f87b8627d4728&companyName=Apple+Inc.&formType=4&formDescription=Statement+of+changes+in+beneficial+ownership+of+securities&dateFiled=2026-10-05",
+     "xBrlSubDoc": ""
+    }
+   }
+  ]
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

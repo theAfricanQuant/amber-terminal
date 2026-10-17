@@ -1,0 +1,292 @@
+{
+ "data": {
+  "asOf": "Thu, Oct 15, 2026",
+  "headers": {
+   "gmt": "Time",
+   "country": "Country",
+   "eventName": "Event",
+   "actual": "Actual",
+   "consensus": "Consensus",
+   "previous": "Previous",
+   "description": "Description"
+  },
+  "rows": [
+   {
+    "gmt": "03:00",
+    "country": "Spain",
+    "eventName": "Spanish Unemployment Change",
+    "actual": "23.6K",
+    "consensus": "17.6K",
+    "previous": "44.4K",
+    "description": "Spanish Unemployment Change measures the change in the numbe"
+   },
+   {
+    "gmt": "04:00",
+    "country": "United Kingdom",
+    "eventName": "Car Registration",
+    "actual": "12.1%",
+    "consensus": " ",
+    "previous": "13.7%",
+    "description": "The car registrations published by the European Automobile M"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Average Hourly Earnings",
+    "actual": "0.1%",
+    "consensus": "0.3%",
+    "previous": "0.3%",
+    "description": "Average Hourly Earnings measures the change in the price bus"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Average Hourly Earnings (YoY)",
+    "actual": "3.0%",
+    "consensus": "3.2%",
+    "previous": "3.1%",
+    "description": ""
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Average Weekly Hours",
+    "actual": "34.4",
+    "consensus": "34.3",
+    "previous": "34.4",
+    "description": "Average Weekly Hours (also known as Average Workweek) measur"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Government Payrolls",
+    "actual": "-17.0K",
+    "consensus": " ",
+    "previous": "44.0K",
+    "description": "In a company, payroll is the sum of all financial records of"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Manufacturing Payrolls",
+    "actual": "9K",
+    "consensus": "10K",
+    "previous": "15K",
+    "description": "Employment data, except those for the Federal Government, re"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Nonfarm Payrolls",
+    "actual": "29K",
+    "consensus": "89K",
+    "previous": "133K",
+    "description": "Nonfarm Payrolls measures the change in the number of people"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Participation Rate",
+    "actual": "61.8%",
+    "consensus": " ",
+    "previous": "61.6%",
+    "description": "The participation rate is an important indicator of the supp"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Private Nonfarm Payrolls",
+    "actual": "46K",
+    "consensus": "85K",
+    "previous": "89K",
+    "description": "Private Nonfarm Payrolls measures the change in the number o"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "U6 Unemployment Rate",
+    "actual": "7.6%",
+    "consensus": " ",
+    "previous": "7.7%",
+    "description": "Percentage of the total work force that is unemployed and ac"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Unemployment Rate",
+    "actual": "4.2%",
+    "consensus": "4.1%",
+    "previous": "4.1%",
+    "description": "The Unemployment Rate measures the percentage of the total w"
+   },
+   {
+    "gmt": "10:00",
+    "country": "United States",
+    "eventName": "Durables Excluding Defense",
+    "actual": "0.0%",
+    "consensus": " ",
+    "previous": "0.1%",
+    "description": "New orders measure the value of orders received in a given p"
+   },
+   {
+    "gmt": "10:00",
+    "country": "United States",
+    "eventName": "Durables Excluding Transport",
+    "actual": "0.2%",
+    "consensus": " ",
+    "previous": "0.3%",
+    "description": ""
+   },
+   {
+    "gmt": "10:00",
+    "country": "United States",
+    "eventName": "Factory Orders",
+    "actual": "0.1%",
+    "consensus": "0.1%",
+    "previous": "0.8%",
+    "description": "Factory Orders measures the change in the total value of new"
+   },
+   {
+    "gmt": "10:00",
+    "country": "United States",
+    "eventName": "Factory orders ex transportation",
+    "actual": "0.3%",
+    "consensus": " ",
+    "previous": "0.7%",
+    "description": "Factory Orders measures the change in the total value of new"
+   },
+   {
+    "gmt": "10:00",
+    "country": "United States",
+    "eventName": "Fed Logan Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Lorie K. Logan began serving as the 14th president and CEO o"
+   },
+   {
+    "gmt": "13:00",
+    "country": "United States",
+    "eventName": "U.S. Baker Hughes Oil Rig Count",
+    "actual": "456",
+    "consensus": " ",
+    "previous": "455",
+    "description": "The Baker Hughes rig count is an important business baromete"
+   },
+   {
+    "gmt": "13:00",
+    "country": "United States",
+    "eventName": "U.S. Baker Hughes Total Rig Count",
+    "actual": "598",
+    "consensus": " ",
+    "previous": "599",
+    "description": ""
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Aluminium speculative net positions",
+    "actual": "-0.9K",
+    "consensus": " ",
+    "previous": "-0.8K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Copper speculative net positions",
+    "actual": "85.4K",
+    "consensus": " ",
+    "previous": "90.5K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Corn speculative net positions",
+    "actual": "509.5K",
+    "consensus": " ",
+    "previous": "535.8K",
+    "description": ""
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Crude Oil speculative net positions",
+    "actual": "109.5K",
+    "consensus": " ",
+    "previous": "141.1K",
+    "description": ""
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Gold speculative net positions",
+    "actual": "218.6K",
+    "consensus": " ",
+    "previous": "225.9K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Nasdaq 100 speculative net positions",
+    "actual": "51.2K",
+    "consensus": " ",
+    "previous": "56.1K",
+    "description": ""
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Natural Gas speculative net positions",
+    "actual": "-231.0K",
+    "consensus": " ",
+    "previous": "-216.5K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC S&P 500 speculative net positions",
+    "actual": "-142.5K",
+    "consensus": " ",
+    "previous": "-133.2K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Silver speculative net positions",
+    "actual": "22.1K",
+    "consensus": " ",
+    "previous": "25.4K",
+    "description": "The Commodity Futures Trading Commission's (CFTC) weekly Com"
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Soybeans speculative net positions",
+    "actual": "256.9K",
+    "consensus": " ",
+    "previous": "281.6K",
+    "description": ""
+   },
+   {
+    "gmt": "15:30",
+    "country": "United States",
+    "eventName": "CFTC Wheat speculative net positions",
+    "actual": "-16.5K",
+    "consensus": " ",
+    "previous": "-7.4K",
+    "description": ""
+   }
+  ]
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

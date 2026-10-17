@@ -1,0 +1,256 @@
+{
+ "data": {
+  "asOf": "Thu, Oct 15, 2026",
+  "headers": {
+   "gmt": "Time",
+   "country": "Country",
+   "eventName": "Event",
+   "actual": "Actual",
+   "consensus": "Consensus",
+   "previous": "Previous",
+   "description": "Description"
+  },
+  "rows": [
+   {
+    "gmt": "01:30",
+    "country": "United Kingdom",
+    "eventName": "BoE Gov Bailey Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Bank of England (BOE) Governor Andrew Bailey (Mar 2020 - Mar"
+   },
+   {
+    "gmt": "02:00",
+    "country": "United Kingdom",
+    "eventName": "BoE MPC Member Pill Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": ""
+   },
+   {
+    "gmt": "05:00",
+    "country": "United States",
+    "eventName": "IEA Monthly Report",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "The International Energy Agency Monthly Oil Market Report co"
+   },
+   {
+    "gmt": "05:40",
+    "country": "United States",
+    "eventName": "FOMC Member Bowman Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Michelle W. Bowman took office as a member of the Board of G"
+   },
+   {
+    "gmt": "06:00",
+    "country": "United States",
+    "eventName": "IMF Meetings",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "The Annual Meetings of the Boards of Governors of the Intern"
+   },
+   {
+    "gmt": "07:00",
+    "country": "United States",
+    "eventName": "MBA 30-Year Mortgage Rate",
+    "actual": "7.50%",
+    "consensus": " ",
+    "previous": "7.49%",
+    "description": "Fixed 30-year mortgage lending rates for 80% loan-to-value m"
+   },
+   {
+    "gmt": "07:00",
+    "country": "United States",
+    "eventName": "MBA Mortgage Applications",
+    "actual": "-2.7%",
+    "consensus": " ",
+    "previous": "-4.2%",
+    "description": "Mortgage Bankers Association (MBA) Mortgage Applications mea"
+   },
+   {
+    "gmt": "07:00",
+    "country": "United States",
+    "eventName": "MBA Purchase Index",
+    "actual": "139.3",
+    "consensus": " ",
+    "previous": "145.1",
+    "description": "MBA - Mortgage Bankers Association of America. The Purchase "
+   },
+   {
+    "gmt": "07:00",
+    "country": "United States",
+    "eventName": "Mortgage Market Index",
+    "actual": "199.2",
+    "consensus": " ",
+    "previous": "204.7",
+    "description": "MBA - Mortgage Bankers Association of America. The Market In"
+   },
+   {
+    "gmt": "07:00",
+    "country": "United States",
+    "eventName": "Mortgage Refinance Index",
+    "actual": "513.5",
+    "consensus": " ",
+    "previous": "515.8",
+    "description": "MBA - Mortgage Bankers Association of America. The Refinance"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Core CPI",
+    "actual": "2.6%",
+    "consensus": "2.5%",
+    "previous": "2.4%",
+    "description": "The Core Consumer Price Index (CPI) measures the changes in "
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Core CPI",
+    "actual": "0.3%",
+    "consensus": "0.2%",
+    "previous": "0.3%",
+    "description": "The Core Consumer Price Index (CPI) measures the changes in "
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Core CPI Index",
+    "actual": "338.90",
+    "consensus": " ",
+    "previous": "337.77",
+    "description": "The consumer price index (CPI) is a measure of the average c"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "CPI",
+    "actual": "3.7%",
+    "consensus": "3.6%",
+    "previous": "3.4%",
+    "description": "The Consumer Price Index (CPI) measures the change in the pr"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "CPI",
+    "actual": "0.6%",
+    "consensus": "0.6%",
+    "previous": "0.4%",
+    "description": "The Consumer Price Index (CPI) measures the change in the pr"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "CPI Index, n.s.a.",
+    "actual": "336.94",
+    "consensus": "336.65",
+    "previous": "334.98",
+    "description": "The consumer price index (CPI) is a measure of the average c"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "CPI Index, s.a",
+    "actual": "336.30",
+    "consensus": " ",
+    "previous": "334.13",
+    "description": ""
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "CPI, n.s.a",
+    "actual": "0.59%",
+    "consensus": " ",
+    "previous": "0.32%",
+    "description": ""
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Real Earnings",
+    "actual": "-0.5%",
+    "consensus": " ",
+    "previous": "0.2%",
+    "description": "Real Earnings measures Wages, salaries, and other earnings, "
+   },
+   {
+    "gmt": "11:00",
+    "country": "United States",
+    "eventName": "Cleveland CPI",
+    "actual": "0.2%",
+    "consensus": " ",
+    "previous": "0.2%",
+    "description": "The Consumer Price Index (CPI) measures the change in the pr"
+   },
+   {
+    "gmt": "11:00",
+    "country": "United States",
+    "eventName": "Thomson Reuters IPSOS PCSI",
+    "actual": "45.18",
+    "consensus": " ",
+    "previous": "50.45",
+    "description": "The Thomson Reuters Ipsos Monthly Global Primary Consumer Se"
+   },
+   {
+    "gmt": "13:30",
+    "country": "United States",
+    "eventName": "FOMC Member Barkin Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Richmond Fed President Thomas Barkin. His public engagements"
+   },
+   {
+    "gmt": "14:00",
+    "country": "United States",
+    "eventName": "Beige Book",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "The Federal Reserve&#039;s Beige Book is a report on current"
+   },
+   {
+    "gmt": "15:00",
+    "country": "United States",
+    "eventName": "Fed Goolsbee Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": ""
+   },
+   {
+    "gmt": "16:30",
+    "country": "United States",
+    "eventName": "API Weekly Crude Oil Stock",
+    "actual": "-11.120M",
+    "consensus": "1.900M",
+    "previous": "-2.090M",
+    "description": "The American Petroleum Institute reports inventory levels of"
+   },
+   {
+    "gmt": "22:55",
+    "country": "United States",
+    "eventName": "FOMC Member Bowman Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Michelle W. Bowman took office as a member of the Board of G"
+   }
+  ]
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

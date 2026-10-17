@@ -1,0 +1,128 @@
+[
+ {
+  "symbol": "BINANCE:BTCUSDT",
+  "name": "BTC / USDT",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "COINBASE:BTC-USD",
+  "name": "BTC / USD",
+  "type": "crypto",
+  "exchange": "Coinbase"
+ },
+ {
+  "symbol": "KRAKEN:XBTUSD",
+  "name": "BTC / USD",
+  "type": "crypto",
+  "exchange": "Kraken"
+ },
+ {
+  "symbol": "BINANCE:BTCU",
+  "name": "BTC / U",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCTRY",
+  "name": "BTC / TRY",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCEUR",
+  "name": "BTC / EUR",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCBRL",
+  "name": "BTC / BRL",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCARS",
+  "name": "BTC / ARS",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCJPY",
+  "name": "BTC / JPY",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "BINANCE:BTCMXN",
+  "name": "BTC / MXN",
+  "type": "crypto",
+  "exchange": "Binance"
+ },
+ {
+  "symbol": "US:BTC",
+  "name": "Bitcoin",
+  "type": "crypto",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:BTCAGXX",
+  "name": "BMO Growth PrincProtecDepositNotes S1040F CAD 20310807 LnkdSolactiveCanTelecom145ARIdx NL (878847A2)",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:BTCC",
+  "name": "Grayscale Bitcoin High Income ETF",
+  "type": "etf",
+  "exchange": "PSE"
+ },
+ {
+  "symbol": "US:BTCFX",
+  "name": "Bitcoin ProFund - Investor Class",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:BTCI",
+  "name": "NEOS Bitcoin High Income ETF",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "US:BTCK",
+  "name": "7RCC Spot Bitcoin and Carbon Credit Futures ETF",
+  "type": "etf",
+  "exchange": "PSE"
+ },
+ {
+  "symbol": "US:BTCL",
+  "name": "T-Rex 2X Long Bitcoin Daily Target ETF",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "US:BTCLX",
+  "name": "Vest Bitcoin Strategy Managed Volatility Investor Class",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:BTCO",
+  "name": "Invesco Galaxy Bitcoin ETF",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "YAHOO:BTC=F",
+  "name": "Bitcoin Futures,Oct-2026",
+  "type": "future",
+  "exchange": "Chicago Mercantile Exchange"
+ },
+ {
+  "symbol": "YAHOO:BTCV=F",
+  "name": "BTCV Future OCT 2026 Trading Se",
+  "type": "future",
+  "exchange": "Chicago Mercantile Exchange"
+ }
+]

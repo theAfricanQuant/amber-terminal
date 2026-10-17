@@ -1,0 +1,130 @@
+{
+ "data": {
+  "asOf": "Thu, Oct 15, 2026",
+  "headers": {
+   "gmt": "Time",
+   "country": "Country",
+   "eventName": "Event",
+   "actual": "Actual",
+   "consensus": "Consensus",
+   "previous": "Previous",
+   "description": "Description"
+  },
+  "rows": [
+   {
+    "gmt": "00:30",
+    "country": "Japan",
+    "eventName": "Industrial Production",
+    "actual": "-2.4%",
+    "consensus": "-1.7%",
+    "previous": "-0.2%",
+    "description": "Industrial Production measures the change in the total infla"
+   },
+   {
+    "gmt": "02:00",
+    "country": "United Kingdom",
+    "eventName": "GDP",
+    "actual": "0.1%",
+    "consensus": "-0.1%",
+    "previous": "0.4%",
+    "description": "Gross Domestic Product (GDP) measures the annualized change "
+   },
+   {
+    "gmt": "02:00",
+    "country": "United Kingdom",
+    "eventName": "GDP",
+    "actual": "2.1%",
+    "consensus": "1.7%",
+    "previous": "1.8%",
+    "description": "Gross Domestic Product (GDP) measures the change in the infl"
+   },
+   {
+    "gmt": "17:45",
+    "country": "New Zealand",
+    "eventName": "External Migration &amp; Visitors",
+    "actual": "8.00%",
+    "consensus": " ",
+    "previous": "8.50%",
+    "description": ""
+   },
+   {
+    "gmt": "03:30",
+    "country": "United Kingdom",
+    "eventName": "BoE Gov Bailey Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Bank of England (BOE) Governor Andrew Bailey (Mar 2020 - Mar"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Continuing Jobless Claims",
+    "actual": "&nbsp;",
+    "consensus": "1,710K",
+    "previous": "1,716K",
+    "description": "Continuing Jobless Claims measures the number of unemployed "
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Initial Jobless Claims",
+    "actual": "&nbsp;",
+    "consensus": "199K",
+    "previous": "197K",
+    "description": "Initial Jobless Claims measures the number of individuals wh"
+   },
+   {
+    "gmt": "08:30",
+    "country": "United States",
+    "eventName": "Philadelphia Fed Manufacturing Index",
+    "actual": "&nbsp;",
+    "consensus": "28.2",
+    "previous": "37.8",
+    "description": "The Philadelphia Federal Reserve Manufacturing Index rates t"
+   },
+   {
+    "gmt": "12:00",
+    "country": "United States",
+    "eventName": "Crude Oil Inventories",
+    "actual": "&nbsp;",
+    "consensus": "0.200M",
+    "previous": "-3.186M",
+    "description": "The Energy Information Administration&#039;s (EIA) Crude Oil"
+   },
+   {
+    "gmt": "22:00",
+    "country": "United Kingdom",
+    "eventName": "BoE Gov Bailey Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Bank of England (BOE) Governor Andrew Bailey (Mar 2020 - Mar"
+   },
+   {
+    "gmt": "23:30",
+    "country": "United States",
+    "eventName": "Fed Chair Warsh Speaks",
+    "actual": "&nbsp;",
+    "consensus": " ",
+    "previous": "&nbsp;",
+    "description": "Federal Reserve Chairman (Warsh was sworn in as the 17th Cha"
+   },
+   {
+    "gmt": "All Day",
+    "country": "Hong Kong",
+    "eventName": "Hong Kong - Chung Yeung Day",
+    "actual": " ",
+    "consensus": " ",
+    "previous": " ",
+    "description": ""
+   }
+  ]
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

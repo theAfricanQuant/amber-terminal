@@ -1,0 +1,80 @@
+[
+ {
+  "symbol": "FX:XAUUSD",
+  "name": "Gold / USD",
+  "type": "commodity",
+  "exchange": "FX"
+ },
+ {
+  "symbol": "US:GOLD",
+  "name": "Gold.com, Inc. Common Stock",
+  "type": "stocks",
+  "exchange": "NYSE"
+ },
+ {
+  "symbol": "US:GOLDX",
+  "name": "Gabelli Gold Fund, Inc. Class AAA",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAANBXX",
+  "name": "Goldman Sachs Bank USA Capped Point to Point CD AAANBXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAAQEXX",
+  "name": "Goldman Sachs Bank USA Fixed Interest Point to Point CD AAAQEXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAAREXX",
+  "name": "Goldman Sachs Bank USA Point to Point CD AAAREXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAASNXX",
+  "name": "Goldman Sachs Bank USA Point to Point CD AAASNXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAAU",
+  "name": "Goldman Sachs Physical Gold ETF Shares",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "US:AAAWOXX",
+  "name": "Goldman Sachs Bank USA Cliquet CD With Minimum Return AAAWOXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AADVSXX",
+  "name": "Goldman Sachs Bank USA AutoCap Weighted Basket CD With Minimum Coupon AADVSXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:AAENJXX",
+  "name": "Goldman Sachs Bank USA Point to Point CD AAENJXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "YAHOO:GC=F",
+  "name": "Gold Dec 26",
+  "type": "future",
+  "exchange": "New York Commodity Exchange"
+ },
+ {
+  "symbol": "YAHOO:MGC=F",
+  "name": "Micro Gold Futures,Dec-2026",
+  "type": "future",
+  "exchange": "New York Commodity Exchange"
+ }
+]

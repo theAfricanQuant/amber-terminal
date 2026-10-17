@@ -1,0 +1,596 @@
+{
+ "data": {
+  "STOCKS": {
+   "MostActiveByShareVolume": {
+    "dataAsOf": "Data as of Oct 14, 2026 4:15 PM ET",
+    "lastTradeTimestamp": "Oct 14, 2026 4:15 PM ET",
+    "table": {
+     "asOf": null,
+     "headers": {
+      "symbol": "Symbol",
+      "name": "Name",
+      "lastSalePrice": "Last",
+      "lastSaleChange": "Change",
+      "change": "Share Volume"
+     },
+     "rows": [
+      {
+       "symbol": "SKYD",
+       "name": "Skydance Corporation Class B Common Stock",
+       "lastSalePrice": "$2.66",
+       "lastSaleChange": "+0.46",
+       "change": "216,824,365.347545",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "TGL",
+       "name": "Treasure Global Inc.",
+       "lastSalePrice": "$0.45",
+       "lastSaleChange": "+0.172",
+       "change": "201,098,146.296984",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "NIVF",
+       "name": "NewGenIvf Group Limited",
+       "lastSalePrice": "$0.2935",
+       "lastSaleChange": "+0.0981",
+       "change": "199,942,118.65361",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "GLND",
+       "name": "Greenland Energy Company Common Stock",
+       "lastSalePrice": "$3.9",
+       "lastSaleChange": "+1.69",
+       "change": "171,546,419.085203",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "WFF",
+       "name": "WF Holding Limited Ordinary Shares",
+       "lastSalePrice": "$0.175",
+       "lastSaleChange": "-1.945",
+       "change": "171,080,400.600248",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "YRD",
+       "name": "Yiren Digital Ltd.",
+       "lastSalePrice": "$0.6499",
+       "lastSaleChange": "+0.1949",
+       "change": "129,506,614.42546",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "SDST",
+       "name": "Stardust Power Inc.",
+       "lastSalePrice": "$0.026",
+       "lastSaleChange": "-0.0141",
+       "change": "120,853,625.672026",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "NVDA",
+       "name": "NVIDIA Corporation",
+       "lastSalePrice": "$221.3",
+       "lastSaleChange": "-7.22",
+       "change": "115,974,373.199869",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "BAC",
+       "name": "Bank of America Corporation",
+       "lastSalePrice": "$51.42",
+       "lastSaleChange": "-2.54",
+       "change": "115,472,671.011326",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CRWV",
+       "name": "CoreWeave, Inc. Class A Common Stock",
+       "lastSalePrice": "$65.78",
+       "lastSaleChange": "-12.03",
+       "change": "107,310,576.137049",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "INTC",
+       "name": "Intel Corporation",
+       "lastSalePrice": "$98.12",
+       "lastSaleChange": "-4.69",
+       "change": "102,349,013.245956",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "SOXL",
+       "name": "Direxion Daily Semiconductor Bull 3x Shares",
+       "lastSalePrice": "$110.58",
+       "lastSaleChange": "-16.99",
+       "change": "98,997,763.642565",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CIFR",
+       "name": "Cipher Mining Inc.",
+       "lastSalePrice": "$9.94",
+       "lastSaleChange": "-1.4",
+       "change": "93,653,413.011914",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "SKYD",
+       "name": "Skydance Corporation Class B Common Stock",
+       "lastSalePrice": "$7.06",
+       "lastSaleChange": "-2.0163",
+       "change": "91,949,390.122056",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "SOFI",
+       "name": "SoFi Technologies, Inc. ",
+       "lastSalePrice": "$14.22",
+       "lastSaleChange": "-1.02",
+       "change": "90,708,968.829327",
+       "deltaIndicator": "down"
+      }
+     ]
+    }
+   },
+   "MostAdvanced": {
+    "dataAsOf": "Data as of Oct 14, 2026 4:15 PM ET",
+    "lastTradeTimestamp": "Oct 14, 2026 4:15 PM ET",
+    "table": {
+     "asOf": null,
+     "headers": {
+      "symbol": "Symbol",
+      "name": "Name",
+      "lastSalePrice": "Last",
+      "lastSaleChange": "Change",
+      "change": "% Change"
+     },
+     "rows": [
+      {
+       "symbol": "DFSCW",
+       "name": "DEFSEC Technologies Inc. Warrant",
+       "lastSalePrice": "$0.0199",
+       "lastSaleChange": "+0.0092",
+       "change": "+85.9813%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "GLND",
+       "name": "Greenland Energy Company Common Stock",
+       "lastSalePrice": "$3.9",
+       "lastSaleChange": "+1.69",
+       "change": "+76.4706%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "TGL",
+       "name": "Treasure Global Inc.",
+       "lastSalePrice": "$0.45",
+       "lastSaleChange": "+0.172",
+       "change": "+61.8705%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "ASTLW",
+       "name": "Algoma Steel Group Inc.",
+       "lastSalePrice": "$0.0014",
+       "lastSaleChange": "+0.0005",
+       "change": "+55.5556%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "GLNDW",
+       "name": "Greenland Energy Company Warrant",
+       "lastSalePrice": "$1.01",
+       "lastSaleChange": "+0.3523",
+       "change": "+53.5655%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "NIVF",
+       "name": "NewGenIvf Group Limited",
+       "lastSalePrice": "$0.2935",
+       "lastSaleChange": "+0.0981",
+       "change": "+50.2047%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AMTD",
+       "name": "AMTD IDEA Group",
+       "lastSalePrice": "$0.5697",
+       "lastSaleChange": "+0.1867",
+       "change": "+48.7467%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AIMDW",
+       "name": "Ainos, Inc.",
+       "lastSalePrice": "$0.0381",
+       "lastSaleChange": "+0.0123",
+       "change": "+47.6744%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "YRD",
+       "name": "Yiren Digital Ltd.",
+       "lastSalePrice": "$0.6499",
+       "lastSaleChange": "+0.1949",
+       "change": "+42.8352%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "HCICR",
+       "name": "Hennessy Capital Investment Corp. VIII Share Rights",
+       "lastSalePrice": "$0.122",
+       "lastSaleChange": "+0.0358",
+       "change": "+41.5313%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "BSP",
+       "name": "Bending Spoons S.p.A. Ordinary Shares",
+       "lastSalePrice": "$53.46",
+       "lastSaleChange": "+15.6",
+       "change": "+41.2044%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "TRAD",
+       "name": "APEX Tech Acquisition Inc. Ordinary Shares",
+       "lastSalePrice": "$0.2949",
+       "lastSaleChange": "+0.0849",
+       "change": "+40.4286%",
+       "deltaIndicator": "up"
+      }
+     ]
+    }
+   },
+   "MostDeclined": {
+    "dataAsOf": "Data as of Oct 14, 2026 4:15 PM ET",
+    "lastTradeTimestamp": "Oct 14, 2026 4:15 PM ET",
+    "table": {
+     "asOf": null,
+     "headers": {
+      "symbol": "Symbol",
+      "name": "Name",
+      "lastSalePrice": "Last",
+      "lastSaleChange": "Change",
+      "change": "% Change"
+     },
+     "rows": [
+      {
+       "symbol": "ASGI",
+       "name": "abrdn Global Infrastructure Income Fund",
+       "lastSalePrice": "$0.0001",
+       "lastSaleChange": "-0.0069",
+       "change": "-98.5714%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "WFF",
+       "name": "WF Holding Limited Ordinary Shares",
+       "lastSalePrice": "$0.175",
+       "lastSaleChange": "-1.945",
+       "change": "-91.7453%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "NWGL",
+       "name": "Nature Wood Group Limited",
+       "lastSalePrice": "$0.26",
+       "lastSaleChange": "-0.93",
+       "change": "-78.1513%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "BCAT",
+       "name": "BlackRock Capital Allocation Term Trust",
+       "lastSalePrice": "$0.001",
+       "lastSaleChange": "-0.0025",
+       "change": "-71.4286%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "RPGL",
+       "name": "Republic Power Group Limited Class A Ordinary Shares",
+       "lastSalePrice": "$15.49",
+       "lastSaleChange": "-28.51",
+       "change": "-64.7955%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CDTTW",
+       "name": "Conduit Pharmaceuticals Inc. ",
+       "lastSalePrice": "$0.0027",
+       "lastSaleChange": "-0.0045",
+       "change": "-62.5%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "SEATW",
+       "name": "Vivid Seats Inc.",
+       "lastSalePrice": "$0.0039",
+       "lastSaleChange": "-0.0046",
+       "change": "-54.1176%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CINGW",
+       "name": "Cingulate Inc.",
+       "lastSalePrice": "$0.003",
+       "lastSaleChange": "-0.0035",
+       "change": "-53.8462%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CCAQW",
+       "name": "Collective Acquisition Corp. Warrants",
+       "lastSalePrice": "$0.1423",
+       "lastSaleChange": "-0.1451",
+       "change": "-50.4871%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "CDT",
+       "name": "Conduit Pharmaceuticals Inc. ",
+       "lastSalePrice": "$0.24",
+       "lastSaleChange": "-0.21",
+       "change": "-46.6667%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "ZBAO",
+       "name": "Zhibao Technology Inc.",
+       "lastSalePrice": "$1.02",
+       "lastSaleChange": "-0.87",
+       "change": "-46.0317%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "YFOR",
+       "name": "YYForce Inc. Class A Ordinary Shares",
+       "lastSalePrice": "$0.5449",
+       "lastSaleChange": "-0.4551",
+       "change": "-45.51%",
+       "deltaIndicator": "down"
+      }
+     ]
+    }
+   },
+   "MostActiveByDollarVolume": {
+    "dataAsOf": "Data as of Oct 14, 2026 4:15 PM ET",
+    "lastTradeTimestamp": "Oct 14, 2026 4:15 PM ET",
+    "table": {
+     "asOf": null,
+     "headers": {
+      "symbol": "Symbol",
+      "name": "Name",
+      "lastSalePrice": "Last",
+      "lastSaleChange": "Change",
+      "change": "% Change"
+     },
+     "rows": [
+      {
+       "symbol": "SPY",
+       "name": "SPDR S&P 500",
+       "lastSalePrice": "$769.67",
+       "lastSaleChange": "-8.34",
+       "change": "-1.072%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "QQQ",
+       "name": "Invesco QQQ Trust, Series 1",
+       "lastSalePrice": "$728.95",
+       "lastSaleChange": "-14.62",
+       "change": "-1.9662%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "NVDA",
+       "name": "NVIDIA Corporation",
+       "lastSalePrice": "$221.3",
+       "lastSaleChange": "-7.22",
+       "change": "-3.1595%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "MU",
+       "name": "Micron Technology, Inc.",
+       "lastSalePrice": "$914.13",
+       "lastSaleChange": "-38.91",
+       "change": "-4.0827%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "AAPL",
+       "name": "Apple Inc.",
+       "lastSalePrice": "$342.96",
+       "lastSaleChange": "+1.69",
+       "change": "+0.4952%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AMD",
+       "name": "Advanced Micro Devices, Inc.",
+       "lastSalePrice": "$570.82",
+       "lastSaleChange": "-34.71",
+       "change": "-5.7322%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "MSFT",
+       "name": "Microsoft Corporation",
+       "lastSalePrice": "$533.69",
+       "lastSaleChange": "-9.76",
+       "change": "-1.7959%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "META",
+       "name": "Meta Platforms, Inc.",
+       "lastSalePrice": "$737.54",
+       "lastSaleChange": "-24.96",
+       "change": "-3.2734%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "TSLA",
+       "name": "Tesla, Inc. ",
+       "lastSalePrice": "$367.16",
+       "lastSaleChange": "-8.07",
+       "change": "-2.1507%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "INTC",
+       "name": "Intel Corporation",
+       "lastSalePrice": "$98.12",
+       "lastSaleChange": "-4.69",
+       "change": "-4.5618%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "GOOGL",
+       "name": "Alphabet Inc.",
+       "lastSalePrice": "$347.64",
+       "lastSaleChange": "-6.14",
+       "change": "-1.7355%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "SPCX",
+       "name": "Space Exploration Technologies Corp. Class A Common Stock",
+       "lastSalePrice": "$152.16",
+       "lastSaleChange": "-4.38",
+       "change": "-2.798%",
+       "deltaIndicator": "down"
+      }
+     ]
+    }
+   },
+   "Nasdaq100Movers": {
+    "dataAsOf": "Data as of Oct 14, 2026 4:00 PM ET",
+    "lastTradeTimestamp": "Oct 14, 2026 4:00 PM ET",
+    "table": {
+     "asOf": null,
+     "headers": {
+      "symbol": "Symbol",
+      "name": "Name",
+      "lastSalePrice": "Last",
+      "lastSaleChange": "Change",
+      "change": "% Change"
+     },
+     "rows": [
+      {
+       "symbol": "ADBE",
+       "name": "Adobe Inc. Common Stock",
+       "lastSalePrice": "240.6800",
+       "lastSaleChange": "+4.4000",
+       "change": "+1.86%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AMD",
+       "name": "Advanced Micro Devices, Inc. Common Stock",
+       "lastSalePrice": "570.8200",
+       "lastSaleChange": "-34.7100",
+       "change": "-5.73%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "ABNB",
+       "name": "Airbnb, Inc. Class A Common Stock",
+       "lastSalePrice": "167.0600",
+       "lastSaleChange": "+1.4800",
+       "change": "+0.89%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "ALNY",
+       "name": "Alnylam Pharmaceuticals, Inc. Common Stock",
+       "lastSalePrice": "224.4700",
+       "lastSaleChange": "+0.6500",
+       "change": "+0.29%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "GOOGL",
+       "name": "Alphabet Inc. Class A Common Stock",
+       "lastSalePrice": "347.6400",
+       "lastSaleChange": "-6.1400",
+       "change": "-1.74%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "GOOG",
+       "name": "Alphabet Inc. Class C Capital Stock",
+       "lastSalePrice": "343.6500",
+       "lastSaleChange": "-5.8700",
+       "change": "-1.68%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "AMZN",
+       "name": "Amazon.com, Inc. Common Stock",
+       "lastSalePrice": "254.0800",
+       "lastSaleChange": "-4.5000",
+       "change": "-1.74%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "AEP",
+       "name": "American Electric Power Company, Inc. Common Stock",
+       "lastSalePrice": "126.1300",
+       "lastSaleChange": "+0.4800",
+       "change": "+0.38%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AMGN",
+       "name": "Amgen Inc. Common Stock",
+       "lastSalePrice": "426.1100",
+       "lastSaleChange": "+13.2700",
+       "change": "+3.21%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "ADI",
+       "name": "Analog Devices, Inc. Common Stock",
+       "lastSalePrice": "403.5700",
+       "lastSaleChange": "-11.1300",
+       "change": "-2.68%",
+       "deltaIndicator": "down"
+      },
+      {
+       "symbol": "AAPL",
+       "name": "Apple Inc. Common Stock",
+       "lastSalePrice": "342.9600",
+       "lastSaleChange": "+1.6900",
+       "change": "+0.50%",
+       "deltaIndicator": "up"
+      },
+      {
+       "symbol": "AMAT",
+       "name": "Applied Materials, Inc. Common Stock",
+       "lastSalePrice": "446.6300",
+       "lastSaleChange": "-17.6100",
+       "change": "-3.79%",
+       "deltaIndicator": "down"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

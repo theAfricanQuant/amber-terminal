@@ -1,0 +1,24 @@
+{
+  "name": "amber-terminal",
+  "version": "1.0.0",
+  "description": "A free, local, Bloomberg-style market terminal: function codes, four panels, world markets, news, filings, rates, options and a backtester with quant checks. Public data, your machine.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js --open",
+    "serve": "node server.js",
+    "test": "node scripts/test.js",
+    "test:live": "node --test test/live.test.js",
+    "doctor": "node scripts/doctor.js",
+    "compare": "node scripts/compare.js",
+    "smoke": "node scripts/smoke.js",
+    "check": "node scripts/check.js",
+    "launch": "node scripts/launch.js",
+    "stop": "node scripts/stop.js",
+    "setup": "node scripts/setup.js"
+  },
+  "license": "MIT"
+}

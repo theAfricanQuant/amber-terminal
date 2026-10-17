@@ -1,0 +1,226 @@
+{
+ "took": 189,
+ "timed_out": false,
+ "hits": {
+  "total": {
+   "value": 2743,
+   "relation": "eq"
+  },
+  "max_score": 12.48424,
+  "hits": [
+   {
+    "_index": "edgar_file",
+    "_id": "0001104659-26-038019:tglo-20251231x10k.htm",
+    "_score": 12.48424,
+    "_source": {
+     "ciks": [
+      "0001066684"
+     ],
+     "period_ending": "2025-12-31",
+     "file_num": [
+      "000-25053"
+     ],
+     "display_names": [
+      "THEGLOBE COM INC  (TGLO)  (CIK 0001066684)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2026-04-01",
+     "biz_states": [
+      "FL"
+     ],
+     "sics": [
+      "7310"
+     ],
+     "form": "10-K",
+     "adsh": "0001104659-26-038019",
+     "film_num": [
+      "26824150"
+     ],
+     "biz_locations": [
+      "Fort Lauderdale, FL"
+     ],
+     "file_type": "10-K",
+     "file_description": "10-K",
+     "inc_states": [
+      "DE"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001683168-25-007621:lamy_i10k-053125.htm",
+    "_score": 12.464572,
+    "_source": {
+     "ciks": [
+      "0001939937"
+     ],
+     "period_ending": "2025-05-31",
+     "file_num": [
+      "000-56599"
+     ],
+     "display_names": [
+      "LAMY  (LMMY)  (CIK 0001939937)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2025-10-17",
+     "biz_states": [
+      "NY"
+     ],
+     "sics": [
+      "8200"
+     ],
+     "form": "10-K",
+     "adsh": "0001683168-25-007621",
+     "film_num": [
+      "251399214"
+     ],
+     "biz_locations": [
+      "New York City, NY"
+     ],
+     "file_type": "10-K",
+     "file_description": "ANNUAL REPORT",
+     "inc_states": [
+      "WY"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001683168-25-008439:guru_i10k-073125.htm",
+    "_score": 12.435843,
+    "_source": {
+     "ciks": [
+      "0001989788"
+     ],
+     "period_ending": "2025-07-31",
+     "file_num": [
+      "333-274641"
+     ],
+     "display_names": [
+      "Guru App Factory Corp  (GAFC)  (CIK 0001989788)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2025-11-14",
+     "biz_states": [],
+     "sics": [
+      "7371"
+     ],
+     "form": "10-K",
+     "adsh": "0001683168-25-008439",
+     "film_num": [
+      "251485535"
+     ],
+     "biz_locations": [
+      "London"
+     ],
+     "file_type": "10-K",
+     "file_description": "FORM 10-K FOR JULY 2025",
+     "inc_states": [
+      "NV"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001477932-25-008576:oyo_10k.htm",
+    "_score": 12.4272785,
+    "_source": {
+     "ciks": [
+      "0001994582"
+     ],
+     "period_ending": "2025-08-31",
+     "file_num": [
+      "000-56710"
+     ],
+     "display_names": [
+      "Oyocar Group Inc.  (OYCG)  (CIK 0001994582)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2025-11-24",
+     "biz_states": [
+      "G8"
+     ],
+     "sics": [
+      "5500"
+     ],
+     "form": "10-K",
+     "adsh": "0001477932-25-008576",
+     "film_num": [
+      "251512404"
+     ],
+     "biz_locations": [
+      "Sosua, G8"
+     ],
+     "file_type": "10-K",
+     "file_description": "FORM 10-K",
+     "inc_states": [
+      "NV"
+     ],
+     "items": []
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001683168-26-001953:palisades_i10k-123125.htm",
+    "_score": 12.420027,
+    "_source": {
+     "ciks": [
+      "0002010982"
+     ],
+     "period_ending": "2025-12-31",
+     "file_num": [
+      "000-56786"
+     ],
+     "display_names": [
+      "Palisades Venture Inc.  (CIK 0002010982)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "10-K"
+     ],
+     "file_date": "2026-03-18",
+     "biz_states": [
+      "CA"
+     ],
+     "sics": [
+      "7374"
+     ],
+     "form": "10-K",
+     "adsh": "0001683168-26-001953",
+     "film_num": [
+      "26766030"
+     ],
+     "biz_locations": [
+      "Woodland Hills, CA"
+     ],
+     "file_type": "10-K",
+     "file_description": "FORM 10-K FOR DEC 2025",
+     "inc_states": [
+      "WY"
+     ],
+     "items": []
+    }
+   }
+  ]
+ }
+}

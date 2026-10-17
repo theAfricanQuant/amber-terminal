@@ -1,0 +1,62 @@
+[
+ {
+  "symbol": "US:AAPL",
+  "name": "Apple Inc. Common Stock",
+  "type": "stocks",
+  "exchange": "NASDAQ-GS"
+ },
+ {
+  "symbol": "US:APLE",
+  "name": "Apple Hospitality REIT, Inc. Common Shares",
+  "type": "stocks",
+  "exchange": "NYSE"
+ },
+ {
+  "symbol": "US:AAPX",
+  "name": "T-Rex 2X Long Apple Daily Target ETF",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "US:AAPY",
+  "name": "Kurv Yield Premium Strategy Apple (AAPL) ETF",
+  "type": "etf",
+  "exchange": "BAT"
+ },
+ {
+  "symbol": "US:MLP",
+  "name": "Maui Land & Pineapple Company, Inc. Common Stock",
+  "type": "stocks",
+  "exchange": "NYSE"
+ },
+ {
+  "symbol": "US:PAPL",
+  "name": "Pineapple Financial Inc. Common Stock",
+  "type": "stocks",
+  "exchange": "AMEX"
+ },
+ {
+  "symbol": "YAHOO:SAAPL=F",
+  "name": "Apple Inc Stock Futures,Dec-202",
+  "type": "future",
+  "exchange": "Chicago Mercantile Exchange"
+ },
+ {
+  "symbol": "YAHOO:XAAPL=F",
+  "name": "Micro Apple Inc Stock Futures,D",
+  "type": "future",
+  "exchange": "Chicago Mercantile Exchange"
+ },
+ {
+  "symbol": "YAHOO:AAPL.TO",
+  "name": "APPLE CDR (CAD HEDGED)",
+  "type": "equity",
+  "exchange": "Toronto"
+ },
+ {
+  "symbol": "YAHOO:AAPL19.BK",
+  "name": "AAPL19_DR AAPL#YUANTA",
+  "type": "equity",
+  "exchange": "SET"
+ }
+]

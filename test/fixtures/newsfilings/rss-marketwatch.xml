@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"
+>
+<channel>
+<title>MarketWatch.com - Top Stories</title>
+<description>MarketWatch, a leading publisher of business and financial news, offers users up-to-the minute news, investment tools, and subscription products.</description>
+<link>http://www.marketwatch.com/</link>
+<language>en-us</language>
+<copyright>Copyright &#169; Dow Jones &amp; Company, Inc. All rights reserved.</copyright>
+<lastBuildDate>Thu, 15 Oct 2026 12:18:18 GMT</lastBuildDate>
+<ttl>60</ttl>
+<image>
+<title>MarketWatch.com - Top Stories</title>
+<url>https://www.marketwatch.com/rss/marketwatch.gif</url>
+<link>http://www.marketwatch.com/</link>
+</image>
+<item>
+<guid isPermaLink="false">WP-MKTW-0005288942</guid>
+<title>There&#x2019;s a &#x2018;monstrous bull market&#x2019; developing under the surface of the S&amp;P 500. This hedge-fund manager tells you where it&#x2019;s at.</title>
+<description>The index may not move much because the stocks with the biggest weightings lag, but there&#x2019;s a bull market starting to bubble elsewhere, says a hedge-fund manager.</description>
+<link>https://www.marketwatch.com/story/theres-a-monstrous-bull-market-developing-under-the-surface-of-the-s-p-500-this-hedge-fund-manager-tells-you-where-its-at-98450ef4?mod=mw_rss_topstories</link>
+<pubDate>Thu, 15 Oct 2026 12:08:00 GMT</pubDate>
+<dc:creator>Jules Rimmer</dc:creator>
+<media:content url="https://images.mktw.net/im-32656039" medium="image" type="image/jpeg">
+<media:credit>Getty Images/iStockphoto</media:credit>
+</media:content>
+</item>
+<item>
+<guid isPermaLink="false">WP-MKTW-0005286824</guid>
+<title>This 30-year market veteran is alarmed by a record-chasing S&amp;P 500. Here&#x2019;s where he&#x2019;s investing instead.</title>
+<description>Steven Jon Kaplan sees a completely irrational stock market right now, and investors ignoring a perfectly safe way to play that.</description>
+<link>https://www.marketwatch.com/story/this-30-year-market-veteran-is-alarmed-by-a-near-record-s-p-500-heres-where-hes-investing-instead-c6611143?mod=mw_rss_topstories</link>
+<pubDate>Thu, 15 Oct 2026 11:41:00 GMT</pubDate>
+<dc:creator>Barbara Kollmeyer</dc:creator>
+<media:content url="https://images.mktw.net/im-13574872" medium="image" type="image/jpeg">
+<media:credit>Getty Images</media:credit>
+</media:content>
+</item>
+<item>
+<guid isPermaLink="false">WP-MKTW-0005285240</guid>
+<title>CoreWeave&#x2019;s AI bonds tumble, raising red flags for the wider market</title>
+<description>CoreWeave&#x2019;s bonds issued a few months ago fell to 81 cents on the dollar earlier Wednesday, yielding more than 15%.</description>
+<link>https://www.marketwatch.com/story/coreweave-sparks-worry-about-broader-credit-market-stress-as-its-bonds-tumble-887458e4?mod=mw_rss_topstories</link>
+<pubDate>Thu, 15 Oct 2026 11:17:00 GMT</pubDate>
+<dc:creator>Christine Idzelis</dc:creator>
+<media:content url="https://images.mktw.net/im-31372691" medium="image" type="image/jpeg">
+<media:credit>Michael M. Santiago/Getty Images</media:credit>
+</media:content>
+</item>
+</channel>
+</rss>

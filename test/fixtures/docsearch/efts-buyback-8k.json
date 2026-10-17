@@ -1,0 +1,200 @@
+{
+ "took": 115,
+ "timed_out": false,
+ "hits": {
+  "total": {
+   "value": 854,
+   "relation": "eq"
+  },
+  "max_score": 11.307128,
+  "hits": [
+   {
+    "_index": "edgar_file",
+    "_id": "0001104659-26-098337:tm2623495d1_ex99-1.htm",
+    "_score": 11.307128,
+    "_source": {
+     "ciks": [
+      "0001771706"
+     ],
+     "period_ending": "2026-08-13",
+     "file_num": [
+      "000-56225"
+     ],
+     "display_names": [
+      "Vireo Growth Inc.  (VREOF)  (CIK 0001771706)"
+     ],
+     "xsl": null,
+     "sequence": "2",
+     "root_forms": [
+      "8-K"
+     ],
+     "file_date": "2026-08-18",
+     "biz_states": [
+      "MN"
+     ],
+     "sics": [
+      "2834"
+     ],
+     "form": "8-K",
+     "adsh": "0001104659-26-098337",
+     "film_num": [
+      "261290661"
+     ],
+     "biz_locations": [
+      "Minneapolis, MN"
+     ],
+     "file_type": "EX-99.1",
+     "file_description": "EXHIBIT 99.1",
+     "inc_states": [
+      "A1"
+     ],
+     "items": [
+      "7.01",
+      "8.01",
+      "9.01"
+     ]
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001193125-26-101066:d110230dex991.htm",
+    "_score": 11.301486,
+    "_source": {
+     "ciks": [
+      "0001635327"
+     ],
+     "period_ending": "2026-03-11",
+     "file_num": [
+      "001-37403"
+     ],
+     "display_names": [
+      "Flutter Entertainment plc  (FLUT)  (CIK 0001635327)"
+     ],
+     "xsl": null,
+     "sequence": "2",
+     "root_forms": [
+      "8-K"
+     ],
+     "file_date": "2026-03-11",
+     "biz_states": [
+      "NY"
+     ],
+     "sics": [
+      "7370"
+     ],
+     "form": "8-K",
+     "adsh": "0001193125-26-101066",
+     "film_num": [
+      "26741503"
+     ],
+     "biz_locations": [
+      "New York, NY"
+     ],
+     "file_type": "EX-99.1",
+     "file_description": "EX-99.1",
+     "inc_states": [
+      "L2"
+     ],
+     "items": [
+      "7.01",
+      "9.01"
+     ]
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001493152-25-029226:form8-k.htm",
+    "_score": 11.153682,
+    "_source": {
+     "ciks": [
+      "0001892492"
+     ],
+     "period_ending": "2025-12-28",
+     "file_num": [
+      "001-41033"
+     ],
+     "display_names": [
+      "Eightco Holdings Inc.  (ORBS)  (CIK 0001892492)"
+     ],
+     "xsl": null,
+     "sequence": 1,
+     "root_forms": [
+      "8-K"
+     ],
+     "file_date": "2025-12-29",
+     "biz_states": [
+      "PA"
+     ],
+     "sics": [
+      "6153"
+     ],
+     "form": "8-K",
+     "adsh": "0001493152-25-029226",
+     "film_num": [
+      "251603407"
+     ],
+     "biz_locations": [
+      "Easton, PA"
+     ],
+     "file_type": "8-K",
+     "file_description": "8-K",
+     "inc_states": [
+      "DE"
+     ],
+     "items": [
+      "7.01",
+      "8.01",
+      "9.01"
+     ]
+    }
+   },
+   {
+    "_index": "edgar_file",
+    "_id": "0001493152-25-029226:ex99-1.htm",
+    "_score": 10.403001,
+    "_source": {
+     "ciks": [
+      "0001892492"
+     ],
+     "period_ending": "2025-12-28",
+     "file_num": [
+      "001-41033"
+     ],
+     "display_names": [
+      "Eightco Holdings Inc.  (ORBS)  (CIK 0001892492)"
+     ],
+     "xsl": null,
+     "sequence": "2",
+     "root_forms": [
+      "8-K"
+     ],
+     "file_date": "2025-12-29",
+     "biz_states": [
+      "PA"
+     ],
+     "sics": [
+      "6153"
+     ],
+     "form": "8-K",
+     "adsh": "0001493152-25-029226",
+     "film_num": [
+      "251603407"
+     ],
+     "biz_locations": [
+      "Easton, PA"
+     ],
+     "file_type": "EX-99.1",
+     "file_description": "EX-99.1",
+     "inc_states": [
+      "DE"
+     ],
+     "items": [
+      "7.01",
+      "8.01",
+      "9.01"
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "data": {
+  "ownershipSummary": {
+   "SharesOutstandingPCT": {
+    "label": "Institutional Ownership",
+    "value": "76.56%"
+   },
+   "ShareoutstandingTotal": {
+    "label": "Total Shares Outstanding (millions)",
+    "value": "14,594"
+   },
+   "TotalHoldingsValue": {
+    "label": "Total Value of Holdings (millions)",
+    "value": "$3,831,764"
+   }
+  },
+  "activePositions": {
+   "asOf": null,
+   "headers": {
+    "positions": "Active Positions",
+    "holders": "Holders",
+    "shares": "Shares"
+   },
+   "rows": [
+    {
+     "positions": "Increased Positions",
+     "holders": "2,847",
+     "shares": "323,562,344"
+    },
+    {
+     "positions": "Decreased Positions",
+     "holders": "3,165",
+     "shares": "238,061,430"
+    },
+    {
+     "positions": "Held Positions",
+     "holders": "416",
+     "shares": "10,611,001,803"
+    },
+    {
+     "positions": "Total Institutional Shares",
+     "holders": "6,428",
+     "shares": "11,172,625,577"
+    }
+   ]
+  },
+  "newSoldOutPositions": {
+   "asOf": null,
+   "headers": {
+    "positions": "Active Positions",
+    "holders": "Holders",
+    "shares": "Shares"
+   },
+   "rows": [
+    {
+     "positions": "New Positions",
+     "holders": "189",
+     "shares": "33,135,904"
+    },
+    {
+     "positions": "Sold Out Positions",
+     "holders": "95",
+     "shares": "18,575,843"
+    }
+   ]
+  },
+  "holdingsTransactions": {
+   "totalRecords": "6428",
+   "institutionalHolders": "6,428 Institutional Holders",
+   "sharesHeld": "11,172,625,577 Total Shares Held",
+   "table": {
+    "asOf": null,
+    "headers": {
+     "ownerName": "Owner Name",
+     "date": "Date",
+     "sharesHeld": "Shares Held",
+     "sharesChange": "Change (Shares)",
+     "sharesChangePCT": "Change (%)",
+     "marketValue": "Value (In 1,000s)"
+    },
+    "rows": [
+     {
+      "ownerName": "Vanguard Group Inc",
+      "date": "12/31/2025",
+      "sharesHeld": "1,426,283,914",
+      "sharesChange": "26,856,752",
+      "sharesChangePCT": "1.919%",
+      "marketValue": "$489,158,331",
+      "url": "/market-activity/institutional-portfolio/vanguard-group-inc-61322"
+     },
+     {
+      "ownerName": "Blackrock, Inc.",
+      "date": "6/30/2026",
+      "sharesHeld": "1,162,996,939",
+      "sharesChange": "18,301,514",
+      "sharesChangePCT": "1.599%",
+      "marketValue": "$398,861,430",
+      "url": "/market-activity/institutional-portfolio/blackrock-inc-1287173"
+     },
+     {
+      "ownerName": "Vanguard Capital Management Llc",
+      "date": "6/30/2026",
+      "sharesHeld": "959,107,911",
+      "sharesChange": "5,260,263",
+      "sharesChangePCT": "0.551%",
+      "marketValue": "$328,935,649",
+      "url": "/market-activity/institutional-portfolio/vanguard-capital-management-llc-1383464"
+     },
+     {
+      "ownerName": "State Street Corp",
+      "date": "6/30/2026",
+      "sharesHeld": "615,129,929",
+      "sharesChange": "12,788,520",
+      "sharesChangePCT": "2.123%",
+      "marketValue": "$210,964,960",
+      "url": "/market-activity/institutional-portfolio/state-street-corp-6697"
+     },
+     {
+      "ownerName": "Geode Capital Management, Llc",
+      "date": "6/30/2026",
+      "sharesHeld": "371,336,543",
+      "sharesChange": "2,719,589",
+      "sharesChangePCT": "0.738%",
+      "marketValue": "$127,353,581",
+      "url": "/market-activity/institutional-portfolio/geode-capital-management-llc-396991"
+     }
+    ]
+   }
+  }
+ },
+ "message": null,
+ "status": {
+  "rCode": 200,
+  "bCodeMessage": null,
+  "developerMessage": null
+ }
+}

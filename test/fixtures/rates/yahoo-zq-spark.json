@@ -1,0 +1,338 @@
+{
+"ZQN27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQN27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.355,
+"fulldayChange": 0.04,
+"fulldayChangePercent": 0.042,
+"fulldayPrice": 95.395,
+"close": [
+95.375,
+95.355,
+95.395
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQZ27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQZ27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.275,
+"fulldayChange": 0.095,
+"fulldayChangePercent": 0.1,
+"fulldayPrice": 95.4,
+"close": [
+95.305,
+95.305,
+95.4
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQH27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQH27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.67,
+"fulldayChange": 0.02,
+"fulldayChangePercent": 0.021,
+"fulldayPrice": 95.655,
+"close": [
+95.67,
+95.635,
+95.655
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQF28.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQF28.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.275,
+"fulldayChange": 0.075,
+"fulldayChangePercent": 0.079,
+"fulldayPrice": 95.385,
+"close": [
+95.305,
+95.31,
+95.385
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQU27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQU27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.3,
+"fulldayChange": 0.05,
+"fulldayChangePercent": 0.052,
+"fulldayPrice": 95.365,
+"close": [
+95.325,
+95.315,
+95.365
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQF27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQF27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.845,
+"fulldayChange": 0.01,
+"fulldayChangePercent": 0.01,
+"fulldayPrice": 95.815,
+"close": [
+95.84,
+95.805,
+95.815
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQG27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQG27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.75,
+"fulldayChange": 0.015,
+"fulldayChangePercent": 0.016,
+"fulldayPrice": 95.725,
+"close": [
+95.75,
+95.71,
+95.725
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQX27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQX27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.27,
+"fulldayChange": 0.07,
+"fulldayChangePercent": 0.073,
+"fulldayPrice": 95.365,
+"close": [
+95.3,
+95.295,
+95.365
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQV26.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQV26.CBT",
+"previousClose": null,
+"chartPreviousClose": 96.118,
+"fulldayChange": 0.003,
+"fulldayChangePercent": 0.003,
+"fulldayPrice": 96.113,
+"close": [
+96.115,
+96.11,
+96.113
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQZ26.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQZ26.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.92,
+"fulldayChange": 0.01,
+"fulldayChangePercent": 0.01,
+"fulldayPrice": 95.89,
+"close": [
+95.915,
+95.88,
+95.89
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQQ27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQQ27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.32,
+"fulldayChange": 0.05,
+"fulldayChangePercent": 0.052,
+"fulldayPrice": 95.38,
+"close": [
+95.345,
+95.33,
+95.38
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQK27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQK27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.47,
+"fulldayChange": 0.035,
+"fulldayChangePercent": 0.037,
+"fulldayPrice": 95.485,
+"close": [
+95.485,
+95.45,
+95.485
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQJ27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQJ27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.565,
+"fulldayChange": 0.025,
+"fulldayChangePercent": 0.026,
+"fulldayPrice": 95.56,
+"close": [
+95.57,
+95.535,
+95.56
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQV27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQV27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.28,
+"fulldayChange": 0.06,
+"fulldayChangePercent": 0.063,
+"fulldayPrice": 95.36,
+"close": [
+95.305,
+95.3,
+95.36
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQM27.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQM27.CBT",
+"previousClose": null,
+"chartPreviousClose": 95.395,
+"fulldayChange": 0.04,
+"fulldayChangePercent": 0.042,
+"fulldayPrice": 95.425,
+"close": [
+95.41,
+95.385,
+95.425
+],
+"dataGranularity": 300,
+"start": null
+},
+"ZQX26.CBT": {
+"timestamp": [
+1791864000,
+1791950400,
+1792036800
+],
+"end": null,
+"symbol": "ZQX26.CBT",
+"previousClose": null,
+"chartPreviousClose": 96.07,
+"fulldayChange": 0.01,
+"fulldayChangePercent": 0.01,
+"fulldayPrice": 96.045,
+"close": [
+96.065,
+96.035,
+96.045
+],
+"dataGranularity": 300,
+"start": null
+}
+}

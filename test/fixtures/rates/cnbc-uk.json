@@ -1,0 +1,100 @@
+{
+ "FormattedQuoteResult": {
+  "FormattedQuote": [
+   {
+    "symbol": "GB1Y-GB",
+    "code": 0,
+    "name": "British 1 Year Gilt",
+    "last": "4.5281%",
+    "change": "-0.0556",
+    "previous_day_closing": "4.5837%",
+    "last_time": "2026-10-15T12:39:30.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB2Y-GB",
+    "code": 0,
+    "name": "British 2 Year Gilt",
+    "last": "4.8272%",
+    "change": "-0.0813",
+    "previous_day_closing": "4.9085%",
+    "last_time": "2026-10-15T08:39:29.000-0400",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB3Y-GB",
+    "code": 0,
+    "name": "British 3 Year Gilt",
+    "last": "4.8699%",
+    "change": "-0.0905",
+    "previous_day_closing": "4.9604%",
+    "last_time": "2026-10-15T12:39:29.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB5Y-GB",
+    "code": 0,
+    "name": "British 5 Year Gilt",
+    "last": "4.9118%",
+    "change": "-0.0909",
+    "previous_day_closing": "5.0027%",
+    "last_time": "2026-10-15T12:39:30.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB7Y-GB",
+    "code": 0,
+    "name": "British 7 Year Gilt",
+    "last": "5.1027%",
+    "change": "-0.1173",
+    "previous_day_closing": "5.22%",
+    "last_time": "2026-10-15T12:39:29.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB10Y-GB",
+    "code": 0,
+    "name": "British 10 Year Gilt",
+    "last": "5.3166%",
+    "change": "-0.1136",
+    "previous_day_closing": "5.4302%",
+    "last_time": "2026-10-15T12:39:29.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB15Y-GB",
+    "code": 0,
+    "name": "British 15 Year Gilt",
+    "last": "5.596%",
+    "change": "-0.1086",
+    "previous_day_closing": "5.7046%",
+    "last_time": "2026-10-15T12:39:29.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB20Y-GB",
+    "code": 0,
+    "name": "British 20 Year Gilt",
+    "last": "5.7499%",
+    "change": "-0.1234",
+    "previous_day_closing": "5.8733%",
+    "last_time": "2026-10-15T12:39:29.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB30Y-GB",
+    "code": 0,
+    "name": "British 30 Year Gilt",
+    "last": "5.7978%",
+    "change": "-0.1113",
+    "previous_day_closing": "5.9091%",
+    "last_time": "2026-10-15T12:37:56.000+0000",
+    "realTime": "true"
+   },
+   {
+    "symbol": "GB50Y-GB",
+    "code": 1
+   }
+  ]
+ }
+}

@@ -1,0 +1,68 @@
+[
+ {
+  "symbol": "US:VOD",
+  "name": "Vodafone Group Plc American Depositary Shares",
+  "type": "stocks",
+  "exchange": "NASDAQ-GS"
+ },
+ {
+  "symbol": "US:AAVODXX",
+  "name": "Goldman Sachs Bank USA Capped Point to Point CD AAVODXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:ACVODXX",
+  "name": "HSBC USA Inc. Point to Point Partially Principally Protected Note With Knock Out ACVODXX",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:EVODX",
+  "name": "Evolve Enhanced Yield Mid Term Bond Fund Hedged Class F NL (840588A2)",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:FVODAX",
+  "name": "FT 12958: FTP Dividend Strength Portfolio, Series 23",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "US:FVODX",
+  "name": "OklahomaDream 529 Strategic Income Portfolio Class I",
+  "type": "mutualfunds",
+  "exchange": "US"
+ },
+ {
+  "symbol": "YAHOO:IDEA.NS",
+  "name": "VODAFONE IDEA LIMITED",
+  "type": "equity",
+  "exchange": "NSE"
+ },
+ {
+  "symbol": "YAHOO:VOD.L",
+  "name": "VODAFONE GROUP PLC ORD USD0.20 ",
+  "type": "equity",
+  "exchange": "London"
+ },
+ {
+  "symbol": "YAHOO:IDEA.BO",
+  "name": "VODAFONE IDEA  LIMITED",
+  "type": "equity",
+  "exchange": "Bombay"
+ },
+ {
+  "symbol": "YAHOO:VOD.JO",
+  "name": "Vodacom Group Ltd",
+  "type": "equity",
+  "exchange": "Johannesburg Stock Exchange"
+ },
+ {
+  "symbol": "YAHOO:VODI.DE",
+  "name": "Vodafone Group PLC            R",
+  "type": "equity",
+  "exchange": "XETRA"
+ }
+]

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amber Terminal</title>
+    <link rel="stylesheet" href="/css/terminal.css" />
+    <script src="/vendor/lightweight-charts.standalone.production.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <span class="logo">AMBER</span><span class="sub">TERMINAL</span>
+      </div>
+      <form id="globalCmd" class="gcmd" autocomplete="off">
+        <input
+          id="gInput"
+          spellcheck="false"
+          placeholder="Type a ticker or a function, then GO.  Try  WEI  ·  AAPL DES  ·  TOP  ·  GC  ·  HELP"
+        />
+        <button type="submit" class="go">GO</button>
+      </form>
+      <div id="clocks" class="clocks"></div>
+      <a class="toplink" id="helpLink" href="#">HELP</a>
+    </header>
+    <div class="keys" id="keys"></div>
+    <main id="grid" class="grid"></main>
+    <footer class="tape"><div id="tape" class="tape-run"></div></footer>
+    <div id="suggest" class="suggest" hidden></div>
+    <div id="toast" class="toast" hidden></div>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

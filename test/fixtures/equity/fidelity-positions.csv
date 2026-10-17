@@ -1,0 +1,10 @@
+Account Number,Account Name,Symbol,Description,Quantity,Last Price,Last Price Change,Current Value,Today's Gain/Loss Dollar,Today's Gain/Loss Percent,Total Gain/Loss Dollar,Total Gain/Loss Percent,Percent Of Account,Cost Basis Total,Average Cost Basis,Type
+SYNTHETIC,Individual,SPAXX**,SYNTHETIC CASH SWEEP,,,,$10.00,,,,,10.00%,,,Cash,
+SYNTHETIC,Individual,MSFT,SYNTHETIC TEST POSITION,2,$10.00,$0.00,$20.00,$0.00,0.00%,$0.00,0.00%,20.00%,$10.00,$5.00,Margin,
+SYNTHETIC,Individual,KO,SYNTHETIC TEST POSITION,3,$10.00,$0.00,$30.00,$0.00,0.00%,+$6.00,+25.00%,30.00%,$24.00,$8.00,Cash,
+SYNTHETIC,Individual,MSFT,SYNTHETIC TEST POSITION,3,$11.00,$0.00,$33.00,$0.00,0.00%,$0.00,0.00%,33.00%,$21.00,$7.00,Cash,
+SYNTHETIC,Individual,FXAIX,SYNTHETIC TEST POSITION,4.5,$10.00,$0.00,$45.00,$0.00,0.00%,$5.00,+12.50%,45.00%,$40.00,$8.8889,Cash,
+SYNTHETIC,Individual,Pending Activity,,,,,-$2.00,,,,,,,,,
+
+"Synthetic fixture for parser tests only; not an account statement."
+"Generated 2026-10-17"
