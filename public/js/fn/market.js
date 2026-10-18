@@ -2,6 +2,7 @@
 import { api, esc, px, pct, chg, cls, big, num } from "../api.js";
 import { table, sect } from "../ui.js";
 import { INDICES, GENERICS } from "../commands.js";
+import { chunkSymbols } from "./market-utils.js";
 
 const REGIONS = {
   Americas: [
@@ -68,10 +69,15 @@ const boardCols = (nameCol) => [
 
 async function renderBoard(ctx, groups, { yellow, nameFrom, every = 60e3 }) {
   const all = Object.values(groups).flat();
+  const symbols = all.map((c) => nameFrom(c)[0]);
   const load = async () => {
-    const { rows, source } = await api.fn("board", {
-      symbols: all.map((c) => nameFrom(c)[0]).join(","),
-    });
+    const responses = await Promise.all(
+      chunkSymbols(symbols).map((batch) =>
+        api.fn("board", { symbols: batch.join(",") }),
+      ),
+    );
+    const rows = Object.assign({}, ...responses.map((r) => r.rows));
+    const source = responses[0]?.source;
     if (!ctx.live()) return;
     ctx.el.innerHTML = "";
     for (const [g, codes] of Object.entries(groups)) {
